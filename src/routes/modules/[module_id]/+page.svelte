@@ -11,12 +11,13 @@
         <div class="col-12 col-lg-6 mb-5">
             <h3 class="fw-bold mb-3">Lernziele</h3>
 
-            {#each data.module.lernziele as lernziel}
-                <div class="d-flex align-items-center mb-3">
-                    <input class="form-check-input me-4" type="checkbox" />
-                    <span class="fs-5">{lernziel}</span>
-                </div>
-            {/each}
+            <ul class="ps-4">
+                {#each data.module.lernziele as lernziel}
+                    <li class="fs-5 mb-3">
+                        {lernziel}
+                    </li>
+                {/each}
+            </ul>
         </div>
 
         <div class="col-12 col-lg-6">
