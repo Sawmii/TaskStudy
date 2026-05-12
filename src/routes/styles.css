@@ -23,7 +23,14 @@ body {
     background-color: #cbe4e4;
 }
 
-.btn-secondary:hover {
+.btn-learninggoals {
+    background-color: #cbe4e4;
+    padding: 8px;
+    font-size: 1.2rem;
+    min-width: none;
+}
+
+.btn-secondary:hover, .btn-learninggoals:hover {
     background-color: #ccdbdb;
     color: black;
 }

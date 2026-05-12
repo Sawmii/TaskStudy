@@ -20,7 +20,7 @@
             <label for="" class="form-label">Dozent</label>
             <input name="dozent" class="form-control" type="text" />
         </div>
-        <DynamicList label="Lernziele" name="lernziele" bind:items={lernziele}/>
+        <DynamicList name="lernziele" bind:items={lernziele}/>
         <div class="d-flex justify-content-between align-items-center">
             <a href="/modules" class="btn btn-secondary">Abbrechen</a>
             <button type="submit" class="btn">Modul erstellen</button>

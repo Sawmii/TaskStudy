@@ -1,6 +1,5 @@
 <script>
     let {
-        label,
         name,
         items = $bindable([])
     } = $props();
@@ -16,10 +15,8 @@
 
 <div class="mb-4">
     <div class="d-flex justify-content-between gap-4 align-items-center mb-3">
-        {#if label}
-            {label}
-        {/if}
-        <button type="button" class="btn btn-secondary" onclick={addItem}>Hinzufügen</button>
+        <p>Lernziele</p>
+        <button type="button" class="btn btn-learninggoals" onclick={addItem}>Hinzufügen</button>
     </div>
 
     {#each items as item, i}
