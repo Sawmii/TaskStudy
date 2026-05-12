@@ -1,0 +1,33 @@
+.page {
+    min-height: 100vh;
+    background-color: #f3f3f7;
+}
+
+.btn {
+    background-color: #25A09F;
+    border: none;
+    border-radius: 999px;
+    font-size: 1.3rem;
+    color: black;
+    min-width: 250px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+.btn:hover {
+    background-color: #568f91;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #cbe4e4;
+}
+
+.btn-secondary:hover {
+    background-color: #ccdbdb;
+    color: black;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
