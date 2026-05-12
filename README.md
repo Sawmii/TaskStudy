@@ -18,18 +18,41 @@
 > **Hinweis:** Massgeblich sind die im **Unterricht** und auf **Moodle** kommunizierten Anforderungen.
 
 ## 1. Ausgangslage
-Kurz beschreiben, welches Problem adressiert wird und welches Ergebnis angestrebt ist. Wem nützt die Lösung, wer ist beteiligt oder betroffen?
-- **Problem:** _[Das Problem ist identifiziert, verständlich beschrieben und optional mit Beispielen illustriert]_  
-- **Ziele:** _[stichwortartig oder einige Sätze]_  
-- **Primäre Zielgruppe:** _[kurz beschreiben]_  
-- **Weitere Stakeholder [Optional]:** _[z. B. Verwaltung, Geschäftsleitung]_  
+Studierende stehen im Alltag häufig vor der Herausforderung, mehrere Module, unterschiedliche Deadlines, Prüfungstermine sowie persönliche Lernziele gleichzeitig zu organisieren. Oft sind relevante Informationen auf verschiedene Tools wie Kalender, Notiz-Apps oder Lernplattformen verteilt. Dadurch entsteht schnell Unübersichtlichkeit, Aufgaben werden zu spät begonnen oder vergessen, und Stress sowie Überforderung nehmen zu. Besonders bei mehreren parallelen Verpflichtungen fällt es vielen Studierenden schwer, ihre Zeit realistisch zu planen, Prioritäten zu setzen und den Überblick über anstehende Aufgaben und Prüfungen zu behalten.
+
+TaskStudy adressiert dieses Problem, indem zentrale studienrelevante Informationen an einem Ort gebündelt und übersichtlich dargestellt werden. Ziel ist es, Studierenden eine einfache, klare und benutzerfreundliche Plattform zu bieten, mit der sie ihre Module, To-dos, Termine und Prüfungen effizient organisieren können.
+- **Problem:** 
+Fehlendes zentrales System für die strukturierte Planung von Modulen, To-dos, Lernzielen und Prüfungsterminen führt zu Unübersichtlichkeit, Prokrastination und Stress.
+- **Ziele:** 
+Übersicht über alle studienrelevanten Aufgaben und Termine schaffen, 
+Zeitmanagement und Selbstorganisation verbessern, 
+Lernfortschritt durch klare Modul- und Lernzielstruktur unterstützen, 
+Stress durch bessere Planung und Transparenz reduzieren 
+- **Primäre Zielgruppe:** 
+Studierende mit mehreren Modulen, Deadlines und Prüfungsterminen, die ihre Studienorganisation verbessern möchten  
+- **Weitere Stakeholder [Optional]:** 
+Dozierende oder Coaches indirekt, sofern Studierende strukturierter und besser vorbereitet arbeiten
 
 
 ## 2. Lösungsidee
-Beschreibt die Lösungsidee.
-- **Kernfunktionalität:** _[Workflows kurz nennen und optional illustrieren]_  
-- **Annahmen [Optional]:** _[welche Hypothesen werden geprüft?]_
-- **Abgrenzung [Optional]:** _[Was gehört explizit nicht zum Umfang?]_
+TaskStudy ist eine zentrale Study Planner App, die verschiedene organisatorische Funktionen in einer übersichtlichen Plattform kombiniert. Die Anwendung ermöglicht es Studierenden, Module anzulegen, To-dos und Termine zu verwalten sowie Prüfungstermine im Blick zu behalten. Zusätzlich können Lernziele pro Modul angezeigt werden, um die persönliche Lernstruktur zu verbessern.
+
+Die Startseite bietet einen direkten Überblick über die wichtigsten aktuellen Informationen, insbesondere über die heutigen To-dos sowie bevorstehende Prüfungstermine. Dadurch erhalten Studierende sofort einen klaren Tagesfokus. Über die Modulübersicht können neue Module hinzugefügt und spezifische Lernziele eingesehen werden. Neue To-dos lassen sich jederzeit erstellen, verwalten und nach Erledigung abhaken.
+- **Kernfunktionalität:** 
+Dashboard / Startseite mit Übersicht über heutige To-dos und Prüfungstermine,
+Verwaltung von To-dos (erstellen, anzeigen, erledigen),
+Verwaltung von Terminen und Prüfungsterminen,
+Module hinzufügen und verwalten,
+Lernziele pro Modul anzeigen,
+Navigation zwischen Startseite, Modulübersicht und Aufgabenbereichen
+- **Annahmen [Optional]:**
+Eine zentrale Plattform verbessert Übersicht und reduziert organisatorischen Stress,
+Studierende profitieren von einer klaren Verbindung zwischen Modulen, Lernzielen und Aufgaben,
+Ein einfacher, fokussierter Aufbau erhöht die Nutzungswahrscheinlichkeit
+- **Abgrenzung [Optional]:** 
+Keine KI-gestützten Lernempfehlungen
+Keine sozialen oder kollaborativen Funktionen
+Kein vollständiger Ersatz für Lernplattformen wie Moodle, sondern Fokus auf persönliche Organisation
 
 ## 3. Vorgehen & Artefakte
 Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergebnisse je Phase.
@@ -45,7 +68,7 @@ Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergeb
 ### 3.3 Decide
 - **Gewählte Variante & Begründung:** _[Entscheidkriterien nennen]_  
 - **End-to-End-Ablauf:** _[Beschreibung inkl. User Journey Map]_  
-- **Mockup:** _[URL, z. B. Figma; Screenshots mit kurzen Beschreibungen]_  
+- **Mockup:** https://www.figma.com/proto/FuEVr0Ug7O3wiwPe6l42qx/StudyPlanner?node-id=0-1&t=JeL9XfYHCEZeJTad-1 
 
 ### 3.4 Prototype
 
@@ -53,7 +76,7 @@ Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergeb
 Beschreibt die Gestaltung und Interaktion.
 > **Hinweis:** Hier wird der **Prototyp** beschrieben, nicht das **Mockup**.
 - **Informationsarchitektur:** _[z. B. Seiten/Navigation: Konzept, nicht die technische Umsetzung]_
-- **User Interface Design:** _[wichtige Screens: Screenshots mit kurzen Erläuterungen]_  
+- **User Interface Design:** _[wichtige Screens: Screenshots mit kurzen Erläuterungen]_
 - **Designentscheidungen:** _[zentrale Entscheidungen und Begründungen]_
 
 #### 3.4.2. Umsetzung (Technik)
