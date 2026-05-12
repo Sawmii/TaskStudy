@@ -132,7 +132,7 @@ Die folgende Deklaration ist verpflichtend und beschreibt den Einsatz von KI im 
 - **Eingesetzte Tools**:
 ChatGPT (Plus) 
 - **Zweck & Umfang**: _[wie, wofür und in welchem Ausmass wurde KI eingesetzt (z. B. Textentwürfe, Codevorschläge, Tests, Refactoring); welche Teile stammen (ganz/teilweise) aus KI-Unterstützung?]_
-Codevorschläge: 
+Codevorschläge: Lernziele 
 - **Eigene Leistung (Abgrenzung):** _[was ist eigenständig erarbeitet/überarbeitet worden?]_
 Die Modul Übersichtsseiten, Create Module Formular, Datenbank-Übersichtsseiten, ModuleCard.svelte, alles unter modules ausser Toggle Lernziele
 
