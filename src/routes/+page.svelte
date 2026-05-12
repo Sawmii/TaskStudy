@@ -1,5 +1,6 @@
 <script>
     import ModuleCard from "$lib/components/ModuleCard.svelte";
+    import Tasklist from "$lib/components/TaskList.svelte";
     let { data } = $props();
 </script>
 
