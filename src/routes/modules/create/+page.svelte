@@ -3,7 +3,7 @@
     import "../../styles.css"
 </script>
 
-<div class="container-fluid page p-4">
+<div class="container-fluid p-4">
     <h1>Neues Modul</h1>
     <form method="POST" action="?/create">
         <div class="mb-3">

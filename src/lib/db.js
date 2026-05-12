@@ -147,6 +147,30 @@ async function createTask(task) {
   return null;
 }
 
+async function updateTask(id, update) {
+  try {
+    const collection = db.collection("tasks");
+    const query = { _id: new ObjectId(id) };
+    const result = await collection.updateOne(query, { $set: update });
+    return result.matchedCount > 0 ? id : null;
+  } catch (error) {
+    console.log(error.message);
+  }
+  return null;
+}
+
+async function deleteTask(id) {
+  try {
+    const collection = db.collection("tasks");
+    const query = { _id: new ObjectId(id) };
+    const result = await collection.deleteOne(query);
+    return result.deletedCount > 0 ? id : null;
+  } catch (error) {
+    console.log(error.message);
+  }
+  return null;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getModules,
@@ -156,4 +180,6 @@ export default {
   deleteModule,
   getTasks,
   createTask,
+  updateTask,
+  deleteTask,
 };

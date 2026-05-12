@@ -3,7 +3,7 @@
     import "../../styles.css";
 </script>
 
-<div class="container-fluid page p-4">
+<div class="container-fluid p-4">
     <h1 class="fw-bold">{data.module.abkuerzung} - {data.module.name}</h1>
     <div class="fs-5 text-muted">{data.module.dozent}</div>
 
@@ -11,13 +11,33 @@
         <div class="col-12 col-lg-6 mb-5">
             <h3 class="fw-bold mb-3">Lernziele</h3>
 
-            <ul class="ps-4">
-                {#each data.module.lernziele as lernziel}
-                    <li class="fs-5 mb-3">
-                        {lernziel}
-                    </li>
+            <div>
+                {#each data.module.lernziele as lernziel, i}
+                    <div class="d-flex align-items-center mb-3">
+                        <form
+                            method="POST"
+                            action="?/toggleLernziel"
+                            use:enhance
+                        >
+                            <input type="hidden" name="index" value={i} />
+                            <input
+                                type="hidden"
+                                name="fertig"
+                                value={!lernziel.fertig}
+                            />
+                            <input
+                                class="form-check-input me-4"
+                                type="checkbox"
+                                checked={lernziel.fertig}
+                                onchange={(e) => e.target.form.requestSubmit()}
+                            />
+                        </form>
+                        <span class="fs-5">
+                            {lernziel.name}
+                        </span>
+                    </div>
                 {/each}
-            </ul>
+            </div>
         </div>
 
         <div class="col-12 col-lg-6">
