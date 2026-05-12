@@ -171,6 +171,28 @@ async function deleteTask(id) {
   return null;
 }
 
+//////////////////////////////////////////
+// Lernziele
+//////////////////////////////////////////
+
+async function addLearningGoal(name, id) {
+  try {
+    let module = await getModule(id);
+    let learninggoal = {
+      name: name, 
+      fertig: false
+    };
+    console.log(module);
+    module.lernziele.push(learninggoal);
+    const result = await updateModule(module);
+    return result.insertedId.toString(); // convert ObjectId to String
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getModules,
@@ -182,4 +204,5 @@ export default {
   createTask,
   updateTask,
   deleteTask,
+  addLearningGoal
 };

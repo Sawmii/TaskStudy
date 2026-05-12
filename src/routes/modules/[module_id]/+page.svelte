@@ -38,6 +38,13 @@
                     </div>
                 {/each}
             </div>
+            <form method="POST" action="?/create">
+                <div class="mb-3">
+                    <label for="" class="form-label">Lernziel</label>
+                    <input name="learninggoal" class="form-control" type="text" />
+                </div>
+                <button type="submit" class="btn">Lernziel hinzufügen</button>
+            </form>
         </div>
 
         <div class="col-12 col-lg-6">
