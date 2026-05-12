@@ -1,5 +1,4 @@
 <script>
-    import { moduleRunnerTransform } from "vite";
 
     let { tasks = [], typ, modules, showCheckboxes = false } = $props();
 
@@ -35,20 +34,20 @@
 
     {#each Object.entries(groupedTasks) as [date, tasksForDate]}
         <div class="mb-4">
-            <h4 class="mb-2">
+            <h4 class="mb-2 fw-light">
                 {new Date(date).toLocaleDateString("de-CH")}
             </h4>
 
             {#each tasksForDate as task}
-                <div class="d-flex align-items-center mb-2 task-item">
+                <div class="d-flex align-items-center mb-2 task-item ps-3">
                     {#if showCheckboxes}
                         <input class="form-check-input me-4" type="checkbox" />
                     {:else}    
                         <span class="me-3">•</span>
                     {/if}
 
-                    <span class="fs-5">
-                        {modules.find((m)=> m._id === task.modulId).abkuerzung}: {task.titel}
+                    <span class="fs-5 ">
+                        {modules.find((m)=> m._id === task.modulID).abkuerzung}: {task.name}
                     </span>
                 </div>
             {/each}

@@ -11,14 +11,14 @@
             <TaskList
                 tasks={data.tasks}
                 modules={data.modules}
-                typ="Termine"
+                typ="Termin"
             />
 
             <div class="mt-5 pt-4">
                 <TaskList
                     tasks={data.tasks}
                     modules={data.modules}
-                    typ="Prüfungstermine"
+                    typ="Prüfungstermin"
                 />
             </div>
         </div>
@@ -27,7 +27,7 @@
             <TaskList
                 tasks={data.tasks}
                 modules={data.modules}
-                typ="To-Dos"
+                typ="To-Do"
                 showCheckboxes={true}
             />
         </div>
