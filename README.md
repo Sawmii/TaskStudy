@@ -58,16 +58,31 @@ Kein vollständiger Ersatz für Lernplattformen wie Moodle, sondern Fokus auf pe
 Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergebnisse je Phase.
 
 ### 3.1 Understand & Define
-- **Zielgruppenverständnis:** _[Problemraumanalyse, Recherche, (Proto-)Personas]_
-- **Wesentliche Erkenntnisse:** _[Stichpunkte]_
+- **Zielgruppenverständnis:** 
+_(Proto-)Personas_
+Als Studentin bin ich selbst Teil der primären Zielgruppe und kenne die Schwierigkeiten aus eigener Erfahrung. Dazu gehören insbesondere das Vergessen von Aufgaben, das Aufschieben von Lernphasen bis kurz vor Prüfungen sowie der Verlust des Überblicks über verschiedene Module und Deadlines.
+Die Analyse zeigte folgende zentrale Problemräume:
+Zeitmanagement bei mehreren parallelen Modulen,
+Fehlende Struktur und Priorisierung beim Lernen,
+Stress durch vergessene oder kurzfristig erledigte Aufgaben,
+Verteilte Informationen auf unterschiedliche Plattformen wie Moodle, Kalender oder Notiz-Apps
 
+Zusätzlich wurde eine Recherche zu bestehenden Lösungen wie StudySmarter durchgeführt. Dabei zeigte sich, dass viele bestehende Apps zwar umfangreiche Funktionen bieten, jedoch häufig überladen wirken oder Premium-Funktionen voraussetzen. Für viele Studierende besteht daher Bedarf nach einer einfacheren, fokussierten Ergänzung zu Moodle, die primär organisatorische Unterstützung bietet.
+- **Wesentliche Erkenntnisse:** _[Stichpunkte]_
+Viele Studierende vergessen Aufgaben oder beginnen zu spät mit der Bearbeitung,
+Moodle dient primär als Lernplattform, bietet jedoch keine zentrale, alltagsnahe Organisationslösung,
+Bestehende Apps sind oft zu komplex oder enthalten unnötige Zusatzfunktionen,
+Eine reduzierte, agendaähnliche App mit Fokus auf To-dos, Termine und Module könnte den Studienalltag sinnvoll ergänzen
 ### 3.2 Sketch
 - **Variantenüberblick:** _[kurz]_
 - **Skizzen:** _[Mehrere Varianten; Unterschiede kurz dokumentieren.]_
 
 ### 3.3 Decide
 - **Gewählte Variante & Begründung:** _[Entscheidkriterien nennen]_  
-- **End-to-End-Ablauf:** _[Beschreibung inkl. User Journey Map]_  
+- **End-to-End-Ablauf:** _[Beschreibung inkl. User Journey Map]_
+1. Startseite öffnen: User sieht sofort heutige To-Dos, Modulfortschritt, Termine und die Prüfungstermine
+2. Modul auswählen oder neues Modul hinzufügen: Übersicht über relevante Module, Lernfortschritt in den unterschiedlichen Modulen und Lernziele sowie To-Dos
+3. Termin erstellen: Auf der Termin Übersichtseite
 - **Mockup:** https://www.figma.com/proto/FuEVr0Ug7O3wiwPe6l42qx/StudyPlanner?node-id=0-1&t=JeL9XfYHCEZeJTad-1 
 
 ### 3.4 Prototype
@@ -132,9 +147,17 @@ Die folgende Deklaration ist verpflichtend und beschreibt den Einsatz von KI im 
 - **Eingesetzte Tools**:
 ChatGPT (Plus) 
 - **Zweck & Umfang**: _[wie, wofür und in welchem Ausmass wurde KI eingesetzt (z. B. Textentwürfe, Codevorschläge, Tests, Refactoring); welche Teile stammen (ganz/teilweise) aus KI-Unterstützung?]_
-Codevorschläge: Lernziele 
+Codevorschläge: Alles was ich aufgelistet habe wurde teilweise von der KI geschrieben. Es musste aber immer angepasst werden, damit es auch wie gewünscht funktioniert hat. 
+Lernziele erfassen, 
+DynamicList.svelte wurde korrigiert weil es fehlerhaft war,
+Filterfunktion bei Tasklist.svelte
 - **Eigene Leistung (Abgrenzung):** _[was ist eigenständig erarbeitet/überarbeitet worden?]_
-Die Modul Übersichtsseiten, Create Module Formular, Datenbank-Übersichtsseiten, ModuleCard.svelte, alles unter modules ausser Toggle Lernziele
+Die Modul Übersichtsseiten, 
+Create Module Formular, 
+Datenbank-Übersichtsseiten, 
+ModuleCard.svelte, 
+alles unter modules ausser Toggle Lernziele und neue Lernziele erstellen,
+Startseite
 
 ### 6.2 Prompt-Vorgehen
 _[Überlegungen zu Prompt-Vorgehen, Qualität und Urheberrecht/Quellen. Wie wurde beim Prompting vorgegangen? Zu beschreiben ist die grundlegende Vorgehensweise. Einzelne, konkrete Prompts sollten höchstens als Beispiele aufgeführt werden. ]_

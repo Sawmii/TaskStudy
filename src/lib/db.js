@@ -125,8 +125,8 @@ async function getTasks() {
 
     // Get all objects that match the query
     tasks = await collection.find(query).toArray();
-    tasks.forEach((albums) => {
-      tasks._id = tasks._id.toString(); // convert ObjectId to String
+    tasks.forEach((task) => {
+      task._id = task._id.toString();
     });
     //console.log(tasks)
   } catch (error) {
