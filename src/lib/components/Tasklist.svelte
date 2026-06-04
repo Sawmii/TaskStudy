@@ -27,7 +27,7 @@
         <a
             href="/tasks/create"
             class="btn add-btn btn-outline-dark d-flex align-items-center justify-content-center"
-            ><img src="../images/add.svg" alt=""></a
+            ><img src="../images/add.svg" alt="" /></a
         >
     </div>
 
@@ -40,7 +40,21 @@
             {#each tasksForDate as task}
                 <div class="d-flex align-items-center mb-2 task-item ps-3">
                     {#if showCheckboxes}
-                        <input class="form-check-input me-4" type="checkbox" />
+                        <form method="POST" action="?/toggleTask">
+                            <input type="hidden" name="id" value={task._id} />
+                            <input
+                                type="hidden"
+                                name="fertig"
+                                value={!task.fertig}
+                            />
+
+                            <input
+                                class="form-check-input me-4"
+                                type="checkbox"
+                                checked={task.fertig}
+                                onchange={(e) => e.target.form.requestSubmit()}
+                            />
+                        </form>
                     {:else}
                         <span class="me-3">•</span>
                     {/if}
@@ -57,16 +71,16 @@
 
 <style>
     .add-btn {
-        width: 32px; 
-        height: 32px; 
-        min-width: auto; 
-        padding: 0 !important; 
-        border-radius: 8px; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        flex-shrink: 0; 
-        font-size: 2.2rem; 
+        width: 32px;
+        height: 32px;
+        min-width: auto;
+        padding: 0 !important;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 2.2rem;
         line-height: 1;
     }
 
