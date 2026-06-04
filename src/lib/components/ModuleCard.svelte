@@ -1,5 +1,16 @@
 <script>
     let { module } = $props();
+
+    let progress = $derived.by(() => {
+        if (!module.lernziele || module.lernziele.length === 0) return 100;
+        const fertigCount = module.lernziele.filter((lz) => lz.fertig).length;
+        return Math.round((fertigCount / module.lernziele.length) * 100);
+    });
+
+    let color = $derived(
+        progress >= 90 ? "#04D048" : progress >= 50 ? "#FFCB06" : "#FB1621",
+    );
+    let tint = $derived(color + "1A");
 </script>
 
 <a href={"/modules/" + module._id} class="module-link">
@@ -12,6 +23,15 @@
                 {module.dozent}
             </div>
         </div>
+
+        <div
+                class="module-progress"
+                style="background: conic-gradient({color} {progress}%, {tint} 0deg);"
+            >
+                <div class="progress-progress-content">
+                    {progress}%
+                </div>
+            </div>
     </div>
 </a>
 

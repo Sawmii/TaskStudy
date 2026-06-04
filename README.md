@@ -100,7 +100,7 @@ Fasst die technische Realisierung zusammen.
 - **Tooling:** _[IDE/Erweiterungen, lokale/Cloud-Tools; den Einsatz von KI beschreiben Sie im Kapitel **KI-Deklaration**]_  
 - **Struktur & Komponenten:** _[Seiten, Routen, State/Stores, wichtige Komponenten]_
 - **Daten & Schnittstellen:** _[Wie werden Daten gespeichert, verwaltet, abgerufen?]_
-- **Deployment:** _[URL]_  
+- **Deployment:** https://taskstudy.netlify.app/ 
 - **Besondere Entscheidungen:** _[z. B. Trade-offs, Vereinfachungen]_  
 
 ### 3.5 Validate

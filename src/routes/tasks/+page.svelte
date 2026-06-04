@@ -3,6 +3,8 @@
     import TaskList from "$lib/components/Tasklist.svelte";
 
     let { data } = $props();
+
+    
 </script>
 
 <div class="container-fluid page p-4">
