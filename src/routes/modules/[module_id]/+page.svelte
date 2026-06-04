@@ -63,7 +63,7 @@
                         />
                     </form>
                     <span class="fs-5">
-                        {data.module.abkuerzung}: {task.name}
+                        {task.name}
                     </span>
                 </div>
             {/each}

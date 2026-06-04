@@ -3,8 +3,7 @@ import db from "$lib/db.js"
 export async function load({ params }) {
     return {
         module: await db.getModule(params.module_id),
-        tasks: await db.getTasks(),
-        modules: await db.getModules()
+        tasks: await db.getTasksByModule(params.module_id)
     }
 }
 

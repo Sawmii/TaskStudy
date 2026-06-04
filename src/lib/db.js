@@ -88,6 +88,7 @@ async function updateModule(module) {
   }
   return null;
 }
+
 // delete module by id
 // returns: id of the deleted module or null, if modules could not be deleted
 async function deleteModule(id) {
@@ -147,6 +148,29 @@ async function createTask(task) {
   return null;
 }
 
+// Get tasks by module id
+async function getTasksByModule(moduleId) {
+  let tasks = [];
+  try {
+    const collection = db.collection("tasks");
+
+    const query = {
+      modulID: moduleId,
+      typ: "To-Do"
+    };
+
+    tasks = await collection.find(query).toArray();
+
+    tasks.forEach((task) => {
+      task._id = task._id.toString();
+    });
+  } catch (error) {
+    console.log("Error in getTasksByModule:", error.message);
+  }
+
+  return tasks;
+}
+
 async function updateTask(id, update) {
   try {
     const collection = db.collection("tasks");
@@ -201,6 +225,7 @@ export default {
   updateModule,
   deleteModule,
   getTasks,
+  getTasksByModule,
   createTask,
   updateTask,
   deleteTask,
