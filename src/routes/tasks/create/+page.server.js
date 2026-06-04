@@ -1,4 +1,5 @@
 import db from "$lib/db.js";
+import { redirect } from '@sveltejs/kit';
 
 export async function load() {
     return {
@@ -19,7 +20,6 @@ export const actions = {
         };
 
         await db.createTask(task);
-
-        return { success: true };
+        throw redirect(303, "/tasks");
     }
 };

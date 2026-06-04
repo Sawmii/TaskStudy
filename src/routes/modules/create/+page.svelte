@@ -28,7 +28,3 @@
         
     </form>
 </div>
-
-{#if form?.success}
-    <p>Modul erstellt</p>
-{/if}

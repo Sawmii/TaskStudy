@@ -15,6 +15,7 @@
                 <option value="Prüfungstermin">Prüfungstermin</option>
             </select>
         </div>
+
         <div class="mb-3">
             <label for="" class="form-label">Modul</label>
             <select name="modul" class="form-select" required>
@@ -27,22 +28,20 @@
                 {/each}
             </select>
         </div>
+
         <div class="mb-3">
             <label for="" class="form-label">Titel</label>
             <input name="titel" class="form-control" type="text" required/>
         </div>
+
         <div class="mb-3">
             <label for="" class="form-label">Datum</label>
             <input name="datum" class="form-control" type="date" required/>
         </div>
+
         <div class="d-flex justify-content-between align-items-center">
             <a href="/tasks" class="btn btn-secondary">Abbrechen</a>
             <button type="submit" class="btn">Termin erstellen</button>
         </div>
-        
     </form>
 </div>
-
-{#if form?.success}
-    <p>Termin erstellt</p>
-{/if}

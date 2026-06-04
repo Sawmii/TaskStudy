@@ -1,4 +1,5 @@
-import db from "$lib/db.js"
+import db from "$lib/db.js";
+import { redirect } from '@sveltejs/kit';
 
 export const actions = {
     create: async ( {request} ) => {
@@ -22,5 +23,7 @@ export const actions = {
         console.log(module)
 
         await db.createModule(module)
+        throw redirect(303, "/modules");
     }
-}
+};
+

@@ -14,11 +14,7 @@
             <div>
                 {#each data.module.lernziele as lernziel, i}
                     <div class="d-flex align-items-center mb-3">
-                        <form
-                            method="POST"
-                            action="?/toggleLernziel"
-                            use:enhance
-                        >
+                        <form method="POST" action="?/toggleLernziel">
                             <input type="hidden" name="index" value={i} />
                             <input
                                 type="hidden"
@@ -50,19 +46,28 @@
         <div class="col-12 col-lg-6">
             <h3 class="fw-bold mb-3">To-Dos</h3>
 
-            <div class="d-flex align-items-center mb-3">
-                <input class="form-check-input me-4" type="checkbox" />
-                <span class="fs-5">
-                    Strategisches Management Test abgeben
-                </span>
-            </div>
+            {#each data.tasks as task}
+                <div class="d-flex align-items-center mb-3">
+                    <form method="POST" action="?/toggleTask">
+                        <input type="hidden" name="id" value={task._id} />
+                        <input
+                            type="hidden"
+                            name="fertig"
+                            value={!task.fertig}
+                        />
+                        <input
+                            class="form-check-input me-4"
+                            type="checkbox"
+                            checked={task.fertig}
+                            onchange={(e) => e.target.form.requestSubmit()}
+                        />
+                    </form>
+                    <span class="fs-5">
+                        {data.module.abkuerzung}: {task.name}
+                    </span>
+                </div>
+            {/each}
 
-            <div class="d-flex align-items-center mb-3">
-                <input class="form-check-input me-4" type="checkbox" />
-                <span class="fs-5">
-                    Strategisches Management Wissenschaftliche Arbeit beginnen
-                </span>
-            </div>
         </div>
     </div>
 </div>
