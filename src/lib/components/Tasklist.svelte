@@ -1,5 +1,12 @@
 <script>
-    let { tasks = [], typ, modules, showCheckboxes = false } = $props();
+    let {
+        tasks = [],
+        typ,
+        modules,
+        showCheckboxes = false,
+        showTitle = true,
+        showDate = true,
+    } = $props();
 
     // Nach Kategorie filtern
     let filteredTasks = tasks.filter((task) => task.typ === typ);
@@ -22,20 +29,24 @@
 </script>
 
 <div class="task-list">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="fw-bold m-0">{typ}</h1>
-        <a
-            href="/tasks/create"
-            class="btn add-btn btn-outline-dark d-flex align-items-center justify-content-center"
-            ><img src="../images/add.svg" alt="" /></a
-        >
-    </div>
+    {#if showTitle}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="fw-bold m-0">{typ}</h1>
+            <a
+                href="/tasks/create"
+                class="btn add-btn btn-outline-dark d-flex align-items-center justify-content-center"
+                ><img src="../images/add.svg" alt="" /></a
+            >
+        </div>
+    {/if}
 
     {#each Object.entries(groupedTasks) as [date, tasksForDate]}
         <div class="mb-4">
-            <h4 class="mb-2 fw-light">
-                {new Date(date).toLocaleDateString("de-CH")}
-            </h4>
+            {#if showDate}
+                <h4 class="mb-2 fw-light">
+                    {new Date(date).toLocaleDateString("de-CH")}
+                </h4>
+            {/if}
 
             {#each tasksForDate as task}
                 <div class="d-flex align-items-center mb-2 task-item ps-3">
