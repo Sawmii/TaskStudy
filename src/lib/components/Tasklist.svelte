@@ -1,4 +1,6 @@
 <script>
+    import { enhance } from "$app/forms";
+
     let {
         tasks = [],
         typ,
@@ -113,13 +115,9 @@
             {#each tasksForDate as task}
                 <div class="d-flex align-items-center mb-2 task-item ps-3">
                     {#if showCheckboxes}
-                        <form method="POST" action="?/toggleTask">
+                        <form method="POST" action="?/toggleTask" use:enhance>
                             <input type="hidden" name="id" value={task._id} />
-                            <input
-                                type="hidden"
-                                name="fertig"
-                                value={!task.fertig}
-                            />
+                            <input type="hidden" name="fertig" value={!task.fertig}/>
 
                             <input
                                 class="form-check-input me-4"
