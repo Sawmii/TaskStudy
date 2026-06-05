@@ -1,8 +1,5 @@
 <script>
-    let {
-        name,
-        items = $bindable([])
-    } = $props();
+    let { name, items = $bindable([]) } = $props();
 
     function addItem() {
         items.push("");
@@ -16,7 +13,9 @@
 <div class="mb-4">
     <div class="d-flex justify-content-between gap-4 align-items-center mb-3">
         <p>Lernziele</p>
-        <button type="button" class="btn btn-learninggoals" onclick={addItem}>Hinzufügen</button>
+        <button type="button" class="btn btn-learninggoals" onclick={addItem}
+            >Hinzufügen</button
+        >
     </div>
 
     {#each items as item, i}
@@ -29,12 +28,38 @@
             />
             <button
                 type="button"
-                class="btn d-flex align-items-center justify-content-center"
-                style="width: 38px; height: 38px; min-width: auto; padding: 0; line-height: 0; font-size: 1.8rem; flex-shrink: 0; border-radius: 8px;"
+                class="btn remove-btn d-flex align-items-center justify-content-center"
                 onclick={() => removeItem(i)}
             >
-                <span style="margin-top: -5px;">&times;</span>
+                <span class="remove-icon">&times;</span>
             </button>
         </div>
     {/each}
 </div>
+
+<style>
+    .btn-learninggoals {
+        background-color: #8fbfc2;
+        color: white;
+    }
+
+    .btn-learninggoals:hover {
+        background-color: #7ab1b4;
+        color: white;
+    }
+
+    .remove-btn {
+        width: 38px;
+        height: 38px;
+        min-width: auto;
+        padding: 0;
+        line-height: 0;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+        border-radius: 8px;
+    }
+
+    .remove-icon {
+        margin-top: -5px;
+    }
+</style>

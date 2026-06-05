@@ -89,17 +89,20 @@
                 <button
                     class="btn-sm filter-btn"
                     class:active={filter === "upcoming"}
-                    onclick={() => (filter = "upcoming")}>Anstehende</button>
+                    onclick={() => (filter = "upcoming")}>Anstehende</button
+                >
 
                 <button
                     class="btn-sm filter-btn"
                     class:active={filter === "past"}
-                    onclick={() => (filter = "past")}>Vergangene</button>
+                    onclick={() => (filter = "past")}>Vergangene</button
+                >
 
                 <button
                     class="btn-sm filter-btn"
                     class:active={filter === "all"}
-                    onclick={() => (filter = "all")}>Alle</button>
+                    onclick={() => (filter = "all")}>Alle</button
+                >
             {/if}
         </div>
     {/if}
@@ -117,7 +120,11 @@
                     {#if showCheckboxes}
                         <form method="POST" action="?/toggleTask" use:enhance>
                             <input type="hidden" name="id" value={task._id} />
-                            <input type="hidden" name="fertig" value={!task.fertig}/>
+                            <input
+                                type="hidden"
+                                name="fertig"
+                                value={!task.fertig}
+                            />
 
                             <input
                                 class="form-check-input me-4"
@@ -132,8 +139,19 @@
 
                     <span class="fs-5">
                         {modules.find((m) => m._id === task.modulID)
-                            .abkuerzung}: {task.name}
+                            ?.abkuerzung}: {task.name}
                     </span>
+
+                    <form
+                        method="POST"
+                        action="?/deleteTask"
+                        use:enhance
+                        class="ms-auto"
+                    >
+                        <input type="hidden" name="id" value={task._id} />
+                        <button type="submit" class="delete-btn">&times;</button
+                        >
+                    </form>
                 </div>
             {/each}
         </div>
@@ -183,5 +201,19 @@
         color: white;
         border-color: #8fbfc2;
         box-shadow: 0 2px 8px rgba(143, 191, 194, 0.3);
+    }
+
+    .delete-btn {
+        border: none;
+        background: transparent;
+        color: #999;
+        font-size: 1.6rem;
+        line-height: 1;
+        width: 34px;
+        height: 34px;
+    }
+
+    .delete-btn:hover {
+        color: rgb(228, 3, 3);
     }
 </style>
