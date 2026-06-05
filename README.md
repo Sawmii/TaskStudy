@@ -30,7 +30,7 @@ Lernfortschritt durch klare Modul- und Lernzielstruktur unterstützen,
 Stress durch bessere Planung und Transparenz reduzieren 
 - **Primäre Zielgruppe:** 
 Studierende mit mehreren Modulen, Deadlines und Prüfungsterminen, die ihre Studienorganisation verbessern möchten  
-- **Weitere Stakeholder [Optional]:** 
+- **Weitere Stakeholder:** 
 Dozierende oder Coaches indirekt, sofern Studierende strukturierter und besser vorbereitet arbeiten
 
 
@@ -79,10 +79,10 @@ Eine reduzierte, agendaähnliche App mit Fokus auf To-dos, Termine und Module k�
 
 ### 3.3 Decide
 - **Gewählte Variante & Begründung:** _[Entscheidkriterien nennen]_  
-- **End-to-End-Ablauf:** _[Beschreibung inkl. User Journey Map]_
-1. Startseite öffnen: User sieht sofort heutige To-Dos, Modulfortschritt, Termine und die Prüfungstermine
-2. Modul auswählen oder neues Modul hinzufügen: Übersicht über relevante Module, Lernfortschritt in den unterschiedlichen Modulen und Lernziele sowie To-Dos
-3. Termin erstellen: Auf der Termin Übersichtseite
+- **End-to-End-Ablauf:**
+1. Startseite öffnen: gelangt auf die Startseite und erhält einen Überblick über aktuelle To-Dos, den Fortschritt in den Modulen, bevorstehende Termine sowie alle Prüfungstermine
+2. Auf der Modulübersicht können bestehende Module eingesehen oder neue Module erstellt werden. Für jedes Modul werden die zugehörigen Lernziele, To-Dos und der aktuelle Lernfortschritt angezeigt.
+3. Termin erstellen: Über die Terminübersicht können Prüfungstermine, Todos und weitere wichtige Termine erfasst werden. Diese werden anschliessend auf der Startseite angezeigt, damit die Nutzerin oder der Nutzer stets den Überblick behält.
 - **Mockup:** https://www.figma.com/proto/FuEVr0Ug7O3wiwPe6l42qx/StudyPlanner?node-id=0-1&t=JeL9XfYHCEZeJTad-1 
 
 ### 3.4 Prototype
@@ -208,20 +208,37 @@ Die folgende Deklaration ist verpflichtend und beschreibt den Einsatz von KI im 
 - **Eingesetzte Tools**:
 ChatGPT (Plus) 
 - **Zweck & Umfang**: _[wie, wofür und in welchem Ausmass wurde KI eingesetzt (z. B. Textentwürfe, Codevorschläge, Tests, Refactoring); welche Teile stammen (ganz/teilweise) aus KI-Unterstützung?]_
-Codevorschläge: Alles was ich aufgelistet habe wurde teilweise von der KI geschrieben. Es musste aber immer angepasst werden, damit es auch wie gewünscht funktioniert hat. 
-Lernziele erfassen, 
-DynamicList.svelte wurde korrigiert weil es fehlerhaft war,
-Filterfunktion bei Tasklist.svelte
+ChatGPT wurde während der Entwicklung als Unterstützung bei der Programmierung eingesetzt. Vor allem habe ich die KI für Codevorschläge, die Fehlersuche und bei der Umsetzung einzelner Funktionen verwendet. Die vorgeschlagenen Lösungen konnten jedoch selten direkt übernommen werden und mussten meist angepasst oder erweitert werden, damit sie mit meiner bestehenden Anwendung funktionieren.
+
+Mit Unterstützung von ChatGPT wurden unter anderem folgende Funktionen umgesetzt:
+
+Erfassen und Verwalten von Lernzielen
+Korrektur von Fehlern in DynamicList.svelte und Funktion getTasksByModule in db.js
+Implementierung der Filterfunktion in TaskList.svelte
+Anzeige des Lernfortschritts als Prozentwert mit kreisförmiger Fortschrittsanzeige
+Unterstützung bei einzelnen Codeproblemen und Lösungsansätzen während der Entwicklung
+
+
+Die KI diente dabei hauptsächlich als Hilfsmittel. Der generierte Code wurde von mir überprüft, angepasst und in die bestehende Anwendung integriert.
 - **Eigene Leistung (Abgrenzung):** _[was ist eigenständig erarbeitet/überarbeitet worden?]_
-Die Modul Übersichtsseiten, 
-Create Module Formular, 
-Datenbank-Übersichtsseiten, 
-ModuleCard.svelte, 
-alles unter modules ausser Toggle Lernziele und neue Lernziele erstellen,
-Startseite
+Die Konzeption, Umsetzung und Gestaltung der Anwendung erfolgte grösstenteils eigenständig. Dazu gehören insbesondere:
+
+Die Startseite
+Die Modul-Übersichtsseiten
+Das Formular zum Erstellen neuer Module und Tasks
+Die Übersichtsseiten
+Die Komponente ModuleCard.svelte
+Alle Komponenten im Ordner modules, mit Ausnahme der Funktionen zum erledigen von Lernzielen sowie zum Erstellen neuer Lernziele
 
 ### 6.2 Prompt-Vorgehen
 _[Überlegungen zu Prompt-Vorgehen, Qualität und Urheberrecht/Quellen. Wie wurde beim Prompting vorgegangen? Zu beschreiben ist die grundlegende Vorgehensweise. Einzelne, konkrete Prompts sollten höchstens als Beispiele aufgeführt werden. ]_
+Während der Entwicklung habe ich ChatGPT hauptsächlich genutzt, wenn ich bei einem Problem nicht weiterkam oder eine Funktion umsetzen wollte. Dabei habe ich möglichst genau beschrieben, was ich erreichen möchte, welche Technologien ich verwende und welche Anforderungen die Lösung erfüllen soll.
+
+Wenn die erste Antwort nicht direkt funktioniert hat, habe ich den Prompt ergänzt, Fehlermeldungen eingefügt oder genauer erklärt, wo das Problem liegt. Oft waren mehrere Nachfragen nötig, bis eine passende Lösung gefunden wurde. Die Vorschläge von ChatGPT dienten dabei als Unterstützung und Ausgangspunkt für die weitere Umsetzung.
+
+Den generierten Code habe ich jeweils selbst getestet und an mein Projekt angepasst. Es mussten Änderungen vorgenommen werden, damit die Lösung mit meiner bestehenden Anwendung funktioniert. Dadurch konnte ich die vorgeschlagenen Ansätze besser verstehen und in meine eigene Projektstruktur integrieren.
+
+Bei der Dokumentation und der Umsetzung des Projekts habe ich darauf geachtet, die Inhalte kritisch zu prüfen und nicht ungefiltert zu übernehmen. Die Verantwortung für die fertige Anwendung sowie für alle Anpassungen und Entscheidungen lag bei mir.
 
 ### 6.3 Reflexion
 _[Nutzen, Grenzen, Risiken/Qualitätssicherung, ...]_
