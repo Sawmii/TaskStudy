@@ -6,25 +6,50 @@
         showCheckboxes = false,
         showTitle = true,
         showDate = true,
+        showFilter = true,
     } = $props();
 
+    // Todos filtern
+    let filter = $state(typ === "To-Do" ? "open" : "upcoming");
+
     // Nach Kategorie filtern
-    let filteredTasks = tasks.filter((task) => task.typ === typ);
+    let filteredTasks = $derived.by(() => {
+        const today = new Date().toISOString().split("T")[0];
 
-    // Nach Datum sortieren
-    filteredTasks.sort((a, b) => new Date(a.datum) - new Date(b.datum));
+        let result = tasks.filter((task) => task.typ === typ);
 
-    // Nach Datum gruppieren
-    let groupedTasks = {};
-
-    filteredTasks.forEach((task) => {
-        const date = task.datum;
-
-        if (!groupedTasks[date]) {
-            groupedTasks[date] = [];
+        if (typ === "To-Do") {
+            if (filter === "open") {
+                result = result.filter((task) => !task.fertig);
+            } else if (filter === "done") {
+                result = result.filter((task) => task.fertig);
+            }
+        } else {
+            if (filter === "upcoming") {
+                result = result.filter((task) => task.datum >= today);
+            } else if (filter === "past") {
+                result = result.filter((task) => task.datum < today);
+            }
         }
 
-        groupedTasks[date].push(task);
+        return result.sort((a, b) => new Date(a.datum) - new Date(b.datum));
+    });
+
+    // Nach Datum gruppieren
+    let groupedTasks = $derived.by(() => {
+        const groups = {};
+
+        filteredTasks.forEach((task) => {
+            const date = task.datum;
+
+            if (!groups[date]) {
+                groups[date] = [];
+            }
+
+            groups[date].push(task);
+        });
+
+        return groups;
     });
 </script>
 
@@ -37,6 +62,43 @@
                 class="btn add-btn btn-outline-dark d-flex align-items-center justify-content-center"
                 ><img src="../images/add.svg" alt="" /></a
             >
+        </div>
+    {/if}
+
+    {#if showFilter}
+        <div class="mb-3 d-flex gap-2">
+            {#if typ === "To-Do"}
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={filter === "open"}
+                    onclick={() => (filter = "open")}>Offene</button
+                >
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={filter === "done"}
+                    onclick={() => (filter = "done")}>Abgeschlossene</button
+                >
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={filter === "all"}
+                    onclick={() => (filter = "all")}>Alle</button
+                >
+            {:else}
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={filter === "upcoming"}
+                    onclick={() => (filter = "upcoming")}>Anstehende</button>
+
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={filter === "past"}
+                    onclick={() => (filter = "past")}>Vergangene</button>
+
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={filter === "all"}
+                    onclick={() => (filter = "all")}>Alle</button>
+            {/if}
         </div>
     {/if}
 
@@ -97,5 +159,31 @@
 
     .add-btn:hover {
         background-color: #8fbfc2;
+    }
+
+    .filter-btn {
+        border: 1px solid #8fbfc2;
+        background-color: white;
+        color: #333;
+        border-radius: 8px;
+        padding: 0.35rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        width: 120px;
+        max-width: 120px;
+        transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+        background-color: #8fbfc2;
+        color: white;
+        border-color: #8fbfc2;
+    }
+
+    .filter-btn.active {
+        background-color: #8fbfc2;
+        color: white;
+        border-color: #8fbfc2;
+        box-shadow: 0 2px 8px rgba(143, 191, 194, 0.3);
     }
 </style>

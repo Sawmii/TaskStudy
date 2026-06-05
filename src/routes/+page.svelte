@@ -21,6 +21,7 @@
                 showCheckboxes={true}
                 showTitle={false}
                 showDate={false}
+                showFilter={false}
             />
 
             <h1 class="fw-bold mb-4">Lernfortschritt</h1>
