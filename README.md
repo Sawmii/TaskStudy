@@ -106,6 +106,7 @@ https://taskstudy.netlify.app/
 
 ### 3.5 Validate
 - **Bilder der getesteten Version**
+
 Startseite:
 ![Startseite](static/images/Startseite.png)
 Modulübersicht:
@@ -161,6 +162,7 @@ Nach dem Speichern einer Aktion fehlte eine Rückmeldung (z. B. Erfolgsmeldung o
 Die zentralen Funktionen konnten grundsätzlich erfolgreich genutzt werden. Besonders das Erstellen neuer Module funktionierte intuitiv und ohne grössere Schwierigkeiten. Verbesserungspotenzial zeigte sich vor allem bei der Sichtbarkeit von Funktionen zum Hinzufügen von Lernzielen sowie beim Nutzerfeedback nach erfolgreichen Aktionen. Zudem wurden zusätzliche Funktionen gewünscht, welche die Organisation der Module weiter verbessern würden.
 
 - **Abgeleitete Verbesserungen:** 
+
 | Priorität | Verbesserung | Begründung |
 |-----------|-------------|------------|
 | Hoch | Sichtbarkeit der Funktion **„Lernziel hinzufügen“** verbessern | Mehrere Testpersonen fanden die Funktion nicht sofort und hatten Schwierigkeiten, Lernziele zu erfassen. |
