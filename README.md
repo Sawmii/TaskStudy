@@ -298,39 +298,43 @@ Dokumentiert Erweiterungen über den Mindestumfang hinaus.
 > **Hinweis:** Jede Erweiterung ist separat nach dem folgenden Schema zu beschreiben.
 
 ### 4.1 Filterfunktion
-- **Beschreibung & Nutzen:** Die Filterfunktion wurde ergänzt, damit User ihre Aufgaben und Termine gezielt filtern können. Gerade bei einer grösseren Anzahl von Terminen verbessert dies die Übersichtlichkeit und erleichtert das Auffinden relevanter Aufgaben. Dadurch wird die Verwaltung der Aufgaben effizienter und die Anwendung benutzerfreundlicher.  
-- **Wo umgesetzt:** Die Erweiterung wurde im Frontend umgesetzt. In der Komponente TaskList.svelte wurden zusätzliche Filter-Buttons hinzugefügt, mit denen die angezeigten Aufgaben gefiltert werden können.
-- **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
+- **Beschreibung & Nutzen:** Die Filterfunktion wurde ergänzt, damit Aufgaben, Termine und Prüfungstermine gezielt gefiltert werden können. Dadurch bleibt die Anwendung auch bei einer grösseren Anzahl von Einträgen übersichtlich und relevante Informationen können schneller gefunden werden.
+- **Wo umgesetzt:** 
+  - **Frontend:** Filterbuttons und Filterlogik in src/lib/components/TaskList.svelte. Zusätzliche Filter für Favoriten in src/routes/+page.svelte und src/routes/modules/+page.svelte.
+  - **Backend:** Keine Änderungen notwendig.
+  - **Datenbank:** Keine Änderungen notwendig, da die Filterung direkt im Frontend erfolgt.
+- **Referenz:** Kapitel 3.4.1 User Interface Design, Screenshots der Startseite.
 - **Aus Evaluation abgeleitet?:** Ja. Die Erweiterung wurde aufgrund des Feedbacks einer Testperson während der Evaluation umgesetzt. Es wurde angemerkt, dass bei vielen Aufgaben eine Filtermöglichkeit hilfreich wäre, um die Übersicht zu behalten und schneller die gewünschten To-Dos zu finden.
 
-### 4.2 Module favorisieren  
-- **Beschreibung & Nutzen:** Es wurde die Möglichkeit ergänzt, Module als Favoriten zu markieren. Dadurch können besonders wichtige oder aktuell relevante Module hervorgehoben werden. Diese Erweiterung verbessert die Übersichtlichkeit, da sich während eines mehrjährigen Studiums eine grosse Anzahl von Modulen ansammeln kann. Durch die Favorisierung können häufig verwendete Module schneller gefunden und von weniger relevanten Modulen unterschieden werden.  
-- **Wo umgesetzt:** Die Erweiterung wurde im Frontend und in der Datenbank umgesetzt. In der Modulübersicht wurde eine Funktion hinzugefügt, mit der Module als Favorit markiert oder die Markierung wieder entfernt werden können. Der Favoritenstatus wird in der Datenbank gespeichert, damit die Auswahl dauerhaft erhalten bleibt. 
-- **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
+### 4.2 Modul löschen
+- **Beschreibung & Nutzen:** Es wurde die Möglichkeit ergänzt, Module zu löschen. Dadurch können nicht mehr benötigte oder versehentlich erstellte Module einfach entfernt werden, was die Übersichtlichkeit verbessert.
+- **Wo umgesetzt:** 
+  - **Frontend:** Button zum Löschen eines Moduls auf der Moduldetailseite.
+  - **Backend:** Form Action deleteModule in src/routes/modules/[module_id]/+page.server.js.
+  - **Datenbank:** Löschfunktion für Module in src/lib/db.js.
+- **Referenz:** Kapitel 3.5 Abgeleitete Verbesserungen, Testuser wollte eine Löschfunktion.  
+- **Aus Evaluation abgeleitet?:** Ja. Eine Testperson erwartete diese Funktion zur Verwaltung ihrer Module.
+
+### 4.3 Module favorisieren  
+- **Beschreibung & Nutzen:** Es wurde die Möglichkeit ergänzt, Module als Favoriten zu markieren. Dadurch können besonders wichtige oder aktuell relevante Module hervorgehoben werden. Dies verbessert die Übersichtlichkeit, da sich im Verlauf eines Studiums viele Module ansammeln können. Favorisierte Module lassen sich dadurch schneller finden und von weniger relevanten Modulen unterscheiden.
+- **Wo umgesetzt:** 
+  - **Frontend:** Favoritenfunktion auf der Moduldetailseite sowie Filter für die Anzeige von Favoriten auf der Startseite und in der Modulübersicht.
+  - **Backend:** Form Action toggleFavoriteModule in src/routes/modules/[module_id]/+page.server.js.
+  - **Datenbank:** Speicherung des Favoritenstatus im Modul-Dokument sowie entsprechende Update-Funktion in src/lib/db.js.
+- **Referenz:** 3.4.1 User Interface Design, Screenshot von der Startseite
 - **Aus Evaluation abgeleitet?:** Nein. Die Erweiterung entstand aus einer eigenen Beobachtung während der Entwicklung. Da sich über mehrere Semester beziehungsweise Studienjahre viele Module ansammeln können, wurde eine Favoritenfunktion als sinnvolle Möglichkeit zur Verbesserung der Übersichtlichkeit und Benutzerfreundlichkeit implementiert.
 
-### _[4.x Kurzbeschreibung / Titel]_  
-- **Beschreibung & Nutzen:** _[Was wurde erweitert? Warum?]_  
-- **Wo umgesetzt:** _[Wie und wo wurde es gemacht? Frontend, Backend, Datenbank?]_  
-- **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
-- **Aus Evaluation abgeleitet?:** _[Wurde diese Erweiterung als Folge eines in der Evaluation identifizierten Issues implementiert?]_  
-
-> Das folgende **Beispiel** wurde bewusst kurz gehalten. Erweiterungen dürfen auch ausführlicher beschrieben werden.
-
-### 4.1 Tabelle nach Kategorien filtern
-- **Beschreibung & Nutzen:** Tabelle X kann nach Kategorie gefiltert werden, weil User typischerweise nur an einer bestimmten Kategorie interessiert sind.  
+### 4.4 Erfolgsfeedback nach dem Speichern
+- **Beschreibung & Nutzen:** Nach dem Erstellen eines Moduls, Lernziels oder Termins werden Benutzer automatisch auf die vorherige Seite weitergeleitet. Dadurch sehen sie direkt das neu erstellte Element und erkennen sofort, dass die Aktion erfolgreich ausgeführt wurde.
 - **Wo umgesetzt:** 
-  - **Frontend:** Tabelle mit Dropdown in Datei ...
-  - **Backend:** Form Action ... in Datei ...
-  - **Datenbank:** MongoDB-Query in Datei ...
-- **Referenz:** Screenshot in Kap. x.y
-- **Aus Evaluation abgeleitet?:** Ja, Issue x.y
+  - **Frontend:** Automatische Navigation zurück auf die entsprechende Übersichts- oder Detailseite.
+  - **Backend:** Weiterleitungen nach erfolgreichen Form Actions in den jeweiligen +page.server.js Dateien.
+  - **Datenbank:** Keine Änderungen notwendig.
+- **Aus Evaluation abgeleitet?:** Ja. Während der Evaluation wurde angemerkt, dass eine Rückmeldung nach dem Speichern fehlt.
 
-## 5. Projektorganisation [Optional]
-Beispiele:
-- **Repository & Struktur:** _[Link; kurze Strukturübersicht]_  
-- **Issue-Management:** _[Vorgehen kurz beschreiben]_  
-- **Commit-Praxis:** _[z. B. sprechende Commits]_
+## 5. Projektorganisation [Optional] 
+- **Issue-Management:** Es wurde kein formales Issue-Management verwendet. Offene Aufgaben, Ideen und Verbesserungen wurden während der Entwicklung laufend festgehalten und direkt umgesetzt.  
+- **Commit-Praxis:** Änderungen wurden regelmässig in Git gespeichert. Die Commits wurden möglichst mit aussagekräftigen Nachrichten versehen, damit nachvollziehbar bleibt, welche Funktionen ergänzt oder angepasst wurden.
 
 ## 6. KI-Deklaration
 Die folgende Deklaration ist verpflichtend und beschreibt den Einsatz von KI im Projekt.
@@ -338,32 +342,39 @@ Die folgende Deklaration ist verpflichtend und beschreibt den Einsatz von KI im 
 ### 6.1 KI-Tools
 - **Eingesetzte Tools**:
 ChatGPT (Plus) 
-- **Zweck & Umfang**: _[wie, wofür und in welchem Ausmass wurde KI eingesetzt (z. B. Textentwürfe, Codevorschläge, Tests, Refactoring); welche Teile stammen (ganz/teilweise) aus KI-Unterstützung?]_
+- **Zweck & Umfang**:
 ChatGPT wurde während der Entwicklung als Unterstützung bei der Programmierung eingesetzt. Vor allem habe ich die KI für Codevorschläge, die Fehlersuche und bei der Umsetzung einzelner Funktionen verwendet. Die vorgeschlagenen Lösungen konnten jedoch selten direkt übernommen werden und mussten meist angepasst oder erweitert werden, damit sie mit meiner bestehenden Anwendung funktionieren.
 
 Mit Unterstützung von ChatGPT wurden unter anderem folgende Funktionen umgesetzt:
 
-Erfassen und Verwalten von Lernzielen
-Korrektur von Fehlern in DynamicList.svelte und Funktion getTasksByModule in db.js
-Implementierung der Filterfunktion in TaskList.svelte
-Anzeige des Lernfortschritts als Prozentwert mit kreisförmiger Fortschrittsanzeige
-Tasks Filterfunktion
-Unterstützung bei einzelnen Codeproblemen und Lösungsansätzen während der Entwicklung
+- Erfassen und Verwalten von Lernzielen
+- Korrektur von Fehlern in DynamicList.svelte und Funktion getTasksByModule in db.js
+- Implementierung der Filterfunktion in TaskList.svelte
+- Anzeige des Lernfortschritts als Prozentwert mit kreisförmiger Fortschrittsanzeige
+- Unterstützung bei einzelnen Codeproblemen und Lösungsansätzen während der Entwicklung
+- Vorbelegung der Kategorie beim Erstellen eines neuen Termins anhand des URL-Parameters
 
+Die erste Filterfunktion für Aufgaben wurde mit Unterstützung von ChatGPT umgesetzt, nachdem mein eigener Lösungsansatz nicht funktioniert hatte. Auf dieser Grundlage konnte ich spätere Filter, beispielsweise den Favoritenfilter für Module, selbstständig entwickeln. Auch bei anderen Problemen, wie der automatischen Auswahl der Kategorie beim Erstellen eines neuen Termins oder den unerwarteten Seitenneuladungen beim Anklicken von Checkboxen, wurde ChatGPT zur Fehlersuche und für Lösungsvorschläge eingesetzt.
 
-Die KI diente dabei hauptsächlich als Hilfsmittel. Der generierte Code wurde von mir überprüft, angepasst und in die bestehende Anwendung integriert.
-- **Eigene Leistung (Abgrenzung):** _[was ist eigenständig erarbeitet/überarbeitet worden?]_
+Die KI diente dabei hauptsächlich als Hilfsmittel. Ich habe ChatGPT vor allem genutzt, wenn etwas nicht wie erwartet funktioniert hat oder ich einen Lösungsansatz benötigte. Der generierte Code wurde von mir überprüft, angepasst und in die bestehende Anwendung integriert.
+- **Eigene Leistung (Abgrenzung):**
 Die Konzeption, Umsetzung und Gestaltung der Anwendung erfolgte grösstenteils eigenständig. Dazu gehören insbesondere:
 
-Die Startseite
-Die Modul-Übersichtsseiten
-Das Formular zum Erstellen neuer Module und Tasks
-Die Übersichtsseiten
-Die Komponente ModuleCard.svelte
-Alle Komponenten im Ordner modules, mit Ausnahme der Funktionen zum erledigen von Lernzielen sowie zum Erstellen neuer Lernziele
+- Die Startseite inklusive der Darstellung der heutigen To-Dos und des Lernfortschritts
+- Die Modulübersicht inklusive Favoritenfunktion und Favoritenfilter
+- Die Detailseiten der Module
+- Das Formular zum Erstellen neuer Module
+- Das Formular zum Erstellen neuer Aufgaben und Termine
+- Die Navigation und Seitenstruktur der Anwendung
+- Die Komponente ModuleCard.svelte
+- Die Datenbankstruktur und die meisten Datenbankabfragen
+- Die Verwaltung von Modulen, Aufgaben und Terminen (Erstellen, Bearbeiten und Löschen)
+- Die Gestaltung des User Interfaces inklusive Farben, Layout und Button-Design
+- Die Lernfortschrittsanzeige und deren Einbindung in die Modulübersicht
+- Die Umsetzung der automatischen Weiterleitungen nach dem Speichern von Daten
+- Alle Komponenten im Ordner modules, mit Ausnahme der Funktionen zum Erledigen und Erstellen von Lernzielen
 
 ### 6.2 Prompt-Vorgehen
-_[Überlegungen zu Prompt-Vorgehen, Qualität und Urheberrecht/Quellen. Wie wurde beim Prompting vorgegangen? Zu beschreiben ist die grundlegende Vorgehensweise. Einzelne, konkrete Prompts sollten höchstens als Beispiele aufgeführt werden. ]_
 Während der Entwicklung habe ich ChatGPT hauptsächlich genutzt, wenn ich bei einem Problem nicht weiterkam oder eine Funktion umsetzen wollte. Dabei habe ich möglichst genau beschrieben, was ich erreichen möchte, welche Technologien ich verwende und welche Anforderungen die Lösung erfüllen soll.
 
 Wenn die erste Antwort nicht direkt funktioniert hat, habe ich den Prompt ergänzt, Fehlermeldungen eingefügt oder genauer erklärt, wo das Problem liegt. Oft waren mehrere Nachfragen nötig, bis eine passende Lösung gefunden wurde. Die Vorschläge von ChatGPT dienten dabei als Unterstützung und Ausgangspunkt für die weitere Umsetzung.
@@ -373,11 +384,16 @@ Den generierten Code habe ich jeweils selbst getestet und an mein Projekt angepa
 Bei der Dokumentation und der Umsetzung des Projekts habe ich darauf geachtet, die Inhalte kritisch zu prüfen und nicht ungefiltert zu übernehmen. Die Verantwortung für die fertige Anwendung sowie für alle Anpassungen und Entscheidungen lag bei mir.
 
 ### 6.3 Reflexion
-_[Nutzen, Grenzen, Risiken/Qualitätssicherung, ...]_
+Die Arbeit an diesem Projekt hat mir insgesamt viel Spass gemacht. Besonders motivierend war es, eine Anwendung von der ersten Idee bis zu einem funktionierenden Produkt selbst umzusetzen.
 
-## 7. Anhang [Optional]
-Beispiele:
-- **Quellen:** _[verwendete Vorlagen/Assets/Modelle; Lizenz/Urheberrecht; ...]_
-- **Testskript & Materialien:** _[Link/Datei]_  
-- **Rohdaten/Auswertung:** _[Link/Datei]_  
+Eine Herausforderung war für mich das Zeitmanagement. In den letzten Wochen des Semesters standen gleichzeitig mehrere Abgaben und Prüfungen an, weshalb es teilweise schwierig war, genügend Zeit für das Projekt einzuplanen. Dadurch musste ich einige Arbeiten unter Zeitdruck erledigen.
 
+Während der Entwicklung bin ich immer wieder auf Fehler gestossen, bei denen zeitweise die gesamte Anwendung nicht mehr funktionierte. Oft stellte sich nach längerer Fehlersuche heraus, dass nur eine Variable falsch geschrieben war oder ein kleiner Fehler im Code vorlag. In solchen Momenten war ich manchmal kurz vor der Verzweiflung, weil ich dachte, ich hätte die ganze Anwendung kaputt gemacht. Im Nachhinein waren diese Situationen aber sehr lehrreich, da ich gelernt habe, Fehler systematisch zu suchen und zu beheben.
+
+Rückblickend würde ich ausserdem die Benennung von Variablen und Datenbankfeldern von Anfang an konsequenter gestalten. Zu Beginn habe ich die Datenbank auf Deutsch aufgebaut, während ich die Variablen im Code grösstenteils auf Englisch benannt habe. Dadurch kam ich teilweise durcheinander und verursachte unnötige Fehler.
+
+Ein Risiko während der Entwicklung war, dass ich Variablen oder Datenbankfelder gelegentlich verwechselt habe. Dadurch funktionierten einzelne Teile der Anwendung manchmal nicht mehr korrekt und die Fehlersuche kostete oft viel Zeit. Zudem gab es längere Pausen zwischen einzelnen Entwicklungsphasen. Nach solchen Unterbrüchen musste ich mich jeweils zuerst wieder in den bestehenden Code einarbeiten, was den Entwicklungsprozess verlangsamt hat.
+
+Zur Qualitätssicherung habe ich jede Änderung direkt nach der Umsetzung getestet. Dadurch konnten Fehler meistens früh erkannt und behoben werden, bevor sie weitere Teile der Anwendung beeinflussten. Besonders bei Formularen, Datenbankabfragen und neuen Funktionen habe ich nach jeder Anpassung überprüft, ob die Anwendung weiterhin wie erwartet funktioniert. Zusätzlich wurde die Anwendung von mehreren Personen getestet. Das erhaltene Feedback half dabei, Fehler zu entdecken und die Benutzerfreundlichkeit weiter zu verbessern. Mehrere Erweiterungen, wie die Filterfunktion oder die Möglichkeit, Module zu löschen, entstanden direkt aus diesen Rückmeldungen.
+
+Insgesamt habe ich während dieses Projekts sehr viel Neues gelernt, insbesondere im Umgang mit SvelteKit, Komponenten, Formularen und der Anbindung einer Datenbank. Auch wenn es zwischendurch frustrierende Momente gab, bin ich mit dem Ergebnis zufrieden und konnte viele praktische Erfahrungen sammeln, die mir bei zukünftigen Projekten sicher weiterhelfen werden.
