@@ -39,27 +39,29 @@ TaskStudy ist eine Study-Planner-App, welche die wichtigsten organisatorischen F
 
 Die Startseite bietet einen schnellen Überblick über aktuelle To-dos, den Lernfortschritt sowie bevorstehende Prüfungen und Termine. Dadurch können Studierende ihre Aufgaben priorisieren und ihren Lernfortschritt einfacher verfolgen.
 - **Kernfunktionalität:** 
-Dashboard / Startseite mit Übersicht über heutige To-dos und Prüfungstermine,
-Verwaltung von To-dos (erstellen, anzeigen, erledigen),
-Verwaltung von Terminen und Prüfungsterminen,
-Module hinzufügen und verwalten,
-Lernziele pro Modul anzeigen,
-Navigation zwischen Startseite, Modulübersicht und Aufgabenbereichen
+  - Dashboard mit Übersicht über aktuelle To-dos und Prüfungstermine
+  - Module erstellen und verwalten
+  - Lernziele pro Modul erfassen und als erledigt markieren
+  - To-dos erstellen, verwalten und abschliessen
+  - Termine und Prüfungstermine verwalten
+  - Lernfortschritt pro Modul visualisieren
+  - Module als Favoriten markieren
+  - Navigation zwischen Startseite, Modulübersicht und Aufgabenbereichen
 - **Annahmen [Optional]:**
-Eine zentrale Plattform verbessert Übersicht und reduziert organisatorischen Stress,
-Studierende profitieren von einer klaren Verbindung zwischen Modulen, Lernzielen und Aufgaben,
-Ein einfacher, fokussierter Aufbau erhöht die Nutzungswahrscheinlichkeit
+  - Eine zentrale Plattform verbessert die Übersicht über studienrelevante Informationen.
+  - Eine Verknüpfung von Modulen, Lernzielen und Aufgaben unterstützt die Lernorganisation.
+  - Eine einfache und übersichtliche Benutzeroberfläche erhöht die Nutzungsbereitschaft.
 - **Abgrenzung [Optional]:** 
-Keine KI-gestützten Lernempfehlungen
-Keine sozialen oder kollaborativen Funktionen
-Kein vollständiger Ersatz für Lernplattformen wie Moodle, sondern Fokus auf persönliche Organisation
+  - Keine KI-gestützten Lernempfehlungen
+  - Keine sozialen oder kollaborativen Funktionen
+  - Kein vollständiger Ersatz für Lernplattformen wie Moodle
+  - Fokus auf persönliche Studienorganisation und Planung
 
 ## 3. Vorgehen & Artefakte
 Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergebnisse je Phase.
 
 ### 3.1 Understand & Define
 - **Zielgruppenverständnis:** 
-_(Proto-)Personas_
 Als Studentin bin ich selbst Teil der primären Zielgruppe und kenne die Schwierigkeiten aus eigener Erfahrung. Dazu gehören insbesondere das Vergessen von Aufgaben, das Aufschieben von Lernphasen bis kurz vor Prüfungen sowie der Verlust des Überblicks über verschiedene Module und Deadlines.
 Die Analyse zeigte folgende zentrale Problemräume:
 Zeitmanagement bei mehreren parallelen Modulen,
@@ -68,22 +70,58 @@ Stress durch vergessene oder kurzfristig erledigte Aufgaben,
 Verteilte Informationen auf unterschiedliche Plattformen wie Moodle, Kalender oder Notiz-Apps
 
 Zusätzlich wurde eine Recherche zu bestehenden Lösungen wie StudySmarter durchgeführt. Dabei zeigte sich, dass viele bestehende Apps zwar umfangreiche Funktionen bieten, jedoch häufig überladen wirken oder Premium-Funktionen voraussetzen. Für viele Studierende besteht daher Bedarf nach einer einfacheren, fokussierten Ergänzung zu Moodle, die primär organisatorische Unterstützung bietet.
-- **Wesentliche Erkenntnisse:** _[Stichpunkte]_
-Viele Studierende vergessen Aufgaben oder beginnen zu spät mit der Bearbeitung,
-Moodle dient primär als Lernplattform, bietet jedoch keine zentrale, alltagsnahe Organisationslösung,
-Bestehende Apps sind oft zu komplex oder enthalten unnötige Zusatzfunktionen,
-Eine reduzierte, agendaähnliche App mit Fokus auf To-dos, Termine und Module könnte den Studienalltag sinnvoll ergänzen
+- **Wesentliche Erkenntnisse:**
+  - Viele Studierende vergessen Aufgaben oder beginnen zu spät mit der Bearbeitung.
+  - Moodle dient primär als Lernplattform, bietet jedoch keine zentrale, alltagsnahe Organisationslösung.
+  - Bestehende Apps sind oft zu komplex oder enthalten unnötige Zusatzfunktionen.
+  - Eine reduzierte, agendaähnliche App mit Fokus auf To-dos, Termine und Module könnte den Studienalltag sinnvoll ergänzen.
 ### 3.2 Sketch
-- **Variantenüberblick:** _[kurz]_
-- **Skizzen:** _[Mehrere Varianten; Unterschiede kurz dokumentieren.]_
+- **Variantenüberblick:** Im Rahmen der Ideensammlung wurden mehrere Varianten für die Struktur und Funktionen der Anwendung entwickelt. Dabei wurden unterschiedliche Möglichkeiten zur Darstellung von Terminen, Prüfungen und Lernfortschritten untersucht. Einige Varianten setzten auf eine klassische Kalenderansicht, während andere Termine in einer Listenansicht darstellten. Zudem wurden zusätzliche Funktionen wie eine separate Prüfungsübersicht, ein Fokus-Timer, das Hochladen von Dateien sowie die Bewertung von Lernsessions skizziert. Ziel war es, verschiedene Ansätze zu vergleichen und die für Studierende übersichtlichste und nützlichste Lösung auszuwählen.
+- **Skizzen:** Im Rahmen der Crazy-8s-Methode wurden mehrere Lösungsansätze für die Anwendung entwickelt. Die einzelnen Skizzen unterscheiden sich vor allem in der Darstellung von Terminen, Prüfungen, Lernfortschritten und zusätzlichen Funktionen.
+  - **Startseite:** Übersicht über die heutigen To-dos sowie den Lernfortschritt der einzelnen Module.
+  - **Kalenderansicht:** Termine und Aufgaben werden in einer klassischen Kalenderansicht dargestellt, um einen Überblick über die zeitliche Planung zu ermöglichen.
+  - **Modulansicht:** Anzeige der To-dos, Herausforderungen und Lernfortschritte eines einzelnen Moduls.
+  - **Prüfungsansicht:** Prüfungen werden auf einer separaten Seite dargestellt, damit wichtige Prüfungstermine unabhängig von anderen Terminen sichtbar sind.
+  - **Journal-/Dateiansicht:** Möglichkeit, Dateien und Lernunterlagen hochzuladen und zu verwalten.
+  - **Fokus-Timer:** Unterstützung konzentrierter Lernphasen durch einen integrierten Timer.
+  - **Bewertungsansicht:** Lernsessions können bewertet werden, um den eigenen Lernfortschritt und die Effektivität der Lernzeit zu reflektieren.
+
+![8s](static/images/8s.png)
+
+Während des Skizzierens wurden verschiedene Möglichkeiten zur Darstellung von Terminen getestet. In einer Variante wurden Termine innerhalb einer Kalenderansicht angezeigt. In einer anderen Variante wurden Termine als Liste dargestellt, da wichtige Termine und Prüfungen dadurch schneller erfasst werden können und die Übersichtlichkeit erhöht wird.
+
+Auch die Prüfungen wurden zunächst als eigenständige Seite konzipiert. Im weiteren Verlauf wurde jedoch entschieden, wichtige Prüfungstermine zusätzlich auf der Startseite anzuzeigen, damit diese direkt sichtbar sind und nicht erst über eine separate Ansicht aufgerufen werden müssen.
+
+Anschliessend wurde Feedback eingeholt. Besonders positiv bewertet wurde die Idee einer zentralen Übersicht für Lernfortschritte und Aufgaben. Zudem wurde vorgeschlagen, Lernziele stärker auf der Startseite sichtbar zu machen sowie Filtermöglichkeiten für Prüfungen vorzusehen.
+
 
 ### 3.3 Decide
-- **Gewählte Variante & Begründung:** _[Entscheidkriterien nennen]_  
+- **Gewählte Variante & Begründung:** Basierend auf den Skizzen und dem erhaltenen Feedback wurde eine Variante gewählt, die den Fokus auf Übersichtlichkeit und einfache Bedienung legt. Die Startseite wurde so gestaltet, dass die wichtigsten Informationen direkt sichtbar sind. Dazu gehören aktuelle To-dos, Lernfortschritte der Module sowie bevorstehende Prüfungs- und Abgabetermine.
+
+Die Entscheidung fiel auf diese Variante, da sie die wichtigsten Informationen ohne unnötige Komplexität darstellt und Studierende dadurch schneller einen Überblick über ihre Aufgaben erhalten. Zusätzlich ermöglicht die direkte Verlinkung zu den Modulen einen effizienten Zugriff auf Lernziele und Fortschritte.
+
+![Skizze](static/images/Skizze.png)
 - **End-to-End-Ablauf:**
-1. Startseite öffnen: gelangt auf die Startseite und erhält einen Überblick über aktuelle To-Dos, den Fortschritt in den Modulen, bevorstehende Termine sowie alle Prüfungstermine
-2. Auf der Modulübersicht können bestehende Module eingesehen oder neue Module erstellt werden. Für jedes Modul werden die zugehörigen Lernziele, To-Dos und der aktuelle Lernfortschritt angezeigt.
-3. Termin erstellen: Über die Terminübersicht können Prüfungstermine, Todos und weitere wichtige Termine erfasst werden. Diese werden anschliessend auf der Startseite angezeigt, damit die Nutzerin oder der Nutzer stets den Überblick behält.
-- **Mockup:** https://www.figma.com/proto/FuEVr0Ug7O3wiwPe6l42qx/StudyPlanner?node-id=0-1&t=JeL9XfYHCEZeJTad-1 
+  1. Die Nutzerin oder der Nutzer öffnet die Startseite und erhält einen Überblick über aktuelle To-dos, Lernfortschritte sowie bevorstehende Termine und Prüfungen.
+  2. Über die Modulübersicht können bestehende Module eingesehen oder neue Module erstellt werden.
+  3. Innerhalb eines Moduls können Lernziele verwaltet und als erledigt markiert werden.
+  4. Über die Terminübersicht können neue Termine, Prüfungstermine und To-dos erfasst werden.
+  5. Alle wichtigen Informationen werden zentral auf der Startseite dargestellt, sodass der aktuelle Lernstand jederzeit sichtbar ist.
+- **Mockup:**
+https://www.figma.com/proto/FuEVr0Ug7O3wiwPe6l42qx/StudyPlanner?node-id=0-1&t=JeL9XfYHCEZeJTad-1
+
+Startseite:
+![Startseite Figma](static/images/Figma_Startseite.png)
+Modulübersicht:
+![Moduluebersicht Figma](static/images/FigmaModulUebersicht.png)
+Modulseite:
+![Modulseite Figma](static/images/Figma_ModulSeite.png)
+Neues Modul:
+![Neues Modul Figma](static/images/Figma_NeuesModul.png)
+Termine:
+![Termine Figma](static/images/Figma_Termine.png)
+Neuer Termin:
+![Neuer Termin Figma](static/images/Figma_NeuerTermin.png)
 
 ### 3.4 Prototype
 
@@ -178,13 +216,13 @@ Die zentralen Funktionen konnten grundsätzlich erfolgreich genutzt werden. Beso
 Dokumentiert Erweiterungen über den Mindestumfang hinaus.
 > **Hinweis:** Jede Erweiterung ist separat nach dem folgenden Schema zu beschreiben.
 
-### Filterfunktion
+### 4.1 Filterfunktion
 - **Beschreibung & Nutzen:** Die Filterfunktion wurde ergänzt, damit User ihre Aufgaben und Termine gezielt filtern können. Gerade bei einer grösseren Anzahl von Terminen verbessert dies die Übersichtlichkeit und erleichtert das Auffinden relevanter Aufgaben. Dadurch wird die Verwaltung der Aufgaben effizienter und die Anwendung benutzerfreundlicher.  
 - **Wo umgesetzt:** Die Erweiterung wurde im Frontend umgesetzt. In der Komponente TaskList.svelte wurden zusätzliche Filter-Buttons hinzugefügt, mit denen die angezeigten Aufgaben gefiltert werden können.
 - **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
 - **Aus Evaluation abgeleitet?:** Ja. Die Erweiterung wurde aufgrund des Feedbacks einer Testperson während der Evaluation umgesetzt. Es wurde angemerkt, dass bei vielen Aufgaben eine Filtermöglichkeit hilfreich wäre, um die Übersicht zu behalten und schneller die gewünschten To-Dos zu finden.
 
-### Module favorisieren  
+### 4.2 Module favorisieren  
 - **Beschreibung & Nutzen:** Es wurde die Möglichkeit ergänzt, Module als Favoriten zu markieren. Dadurch können besonders wichtige oder aktuell relevante Module hervorgehoben werden. Diese Erweiterung verbessert die Übersichtlichkeit, da sich während eines mehrjährigen Studiums eine grosse Anzahl von Modulen ansammeln kann. Durch die Favorisierung können häufig verwendete Module schneller gefunden und von weniger relevanten Modulen unterschieden werden.  
 - **Wo umgesetzt:** Die Erweiterung wurde im Frontend und in der Datenbank umgesetzt. In der Modulübersicht wurde eine Funktion hinzugefügt, mit der Module als Favorit markiert oder die Markierung wieder entfernt werden können. Der Favoritenstatus wird in der Datenbank gespeichert, damit die Auswahl dauerhaft erhalten bleibt. 
 - **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
