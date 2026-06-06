@@ -153,7 +153,7 @@
                             <span class="me-3">•</span>
                         {/if}
 
-                        <span class="fs-5">
+                        <span class="fs-5" class:task-done={task.fertig}>
                             {modules.find((m) => m._id === task.modulID)
                                 ?.abkuerzung}: {task.name}
                         </span>
@@ -233,5 +233,10 @@
 
     .delete-btn:hover {
         color: rgb(228, 3, 3);
+    }
+
+    .task-done {
+        color: #999;
+        text-decoration: line-through;
     }
 </style>

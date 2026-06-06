@@ -8,6 +8,16 @@
     const todayTodos = data.tasks.filter(
         (task) => task.typ === "To-Do" && task.datum === today,
     );
+
+    let moduleFilter = $state("favorites");
+
+    let filteredModules = $derived.by(() => {
+        if (moduleFilter === "favorites") {
+            return data.modules.filter((module) => module.favorit);
+        }
+
+        return data.modules;
+    });
 </script>
 
 <div class="container-fluid">
@@ -25,9 +35,30 @@
             />
 
             <h1 class="fw-bold mb-4">Lernfortschritt</h1>
-            {#each data.modules as module}
-                <ModuleCard {module} />
-            {/each}
+            <div class="mb-4 d-flex gap-2">
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={moduleFilter === "favorites"}
+                    onclick={() => (moduleFilter = "favorites")}
+                >
+                    Favoriten
+                </button>
+
+                <button
+                    class="btn-sm filter-btn"
+                    class:active={moduleFilter === "all"}
+                    onclick={() => (moduleFilter = "all")}
+                >
+                    Alle
+                </button>
+            </div>
+            {#if filteredModules.length === 0}
+                <p class="text-muted">Keine Favoriten vorhanden.</p>
+            {:else}
+                {#each filteredModules as module}
+                    <ModuleCard {module} />
+                {/each}
+            {/if}
         </div>
 
         <div class="col-12 col-lg-4 p-5 sidebar">

@@ -3,12 +3,22 @@ body {
     background-color: #f3f3f7;
 }
 
+.page-container {
+    min-height: calc(100vh - 94px);
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-element:hover {
+    color: #25A09F;
+}
+
 .btn {
     background-color: #25A09F;
     border: none;
     border-radius: 999px;
     font-size: 1.3rem;
-    color: black;
+    color: white;
     min-width: 250px;
     padding-bottom: 12px;
     padding-top: 12px;
@@ -16,11 +26,11 @@ body {
 
 .btn:hover {
     background-color: #568f91;
-    color: white;
 }
 
 .btn-secondary {
     background-color: #cbe4e4;
+    color: black;
 }
 
 .btn-learninggoals {
@@ -43,6 +53,14 @@ h1 {
 .sidebar {
     background-color: #ebebef;
     min-height: calc(100vh - 94px);
+}
+
+.delete-module-btn {
+    background-color: rgba(224, 28, 28, 0.418);
+}
+
+.delete-module-btn:hover {
+    background-color: rgba(224, 28, 28, 0.637);
 }
 
 .remove-btn {
@@ -113,4 +131,8 @@ h1 {
     color: white;
     border-color: #8fbfc2;
     box-shadow: 0 2px 8px rgba(143, 191, 194, 0.3);
+}
+
+.active-nav {
+    font-weight: bold;
 }
