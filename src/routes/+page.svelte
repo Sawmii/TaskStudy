@@ -1,12 +1,15 @@
 <script>
     import ModuleCard from "$lib/components/ModuleCard.svelte";
     import TaskList from "$lib/components/Tasklist.svelte";
+
     let { data } = $props();
 
-    const today = new Date().toISOString().split("T")[0];
+    let today = new Date().toISOString().split("T")[0];
 
-    const todayTodos = data.tasks.filter(
-        (task) => task.typ === "To-Do" && task.datum === today,
+    let todayTodos = $derived.by(() =>
+        data.tasks.filter(
+            (task) => task.typ === "To-Do" && task.datum === today
+        )
     );
 
     let moduleFilter = $state("favorites");

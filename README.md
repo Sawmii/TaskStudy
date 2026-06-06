@@ -18,26 +18,26 @@
 > **Hinweis:** Massgeblich sind die im **Unterricht** und auf **Moodle** kommunizierten Anforderungen.
 
 ## 1. Ausgangslage
-Studierende stehen im Alltag häufig vor der Herausforderung, mehrere Module, unterschiedliche Deadlines, Prüfungstermine sowie persönliche Lernziele gleichzeitig zu organisieren. Oft sind relevante Informationen auf verschiedene Tools wie Kalender, Notiz-Apps oder Lernplattformen verteilt. Dadurch entsteht schnell Unübersichtlichkeit, Aufgaben werden zu spät begonnen oder vergessen, und Stress sowie Überforderung nehmen zu. Besonders bei mehreren parallelen Verpflichtungen fällt es vielen Studierenden schwer, ihre Zeit realistisch zu planen, Prioritäten zu setzen und den Überblick über anstehende Aufgaben und Prüfungen zu behalten.
+Studierende müssen während ihres Studiums verschiedene Module, Aufgaben, Prüfungstermine und persönliche Lernziele gleichzeitig organisieren. Oft sind diese Informationen auf mehrere Plattformen wie Kalender, Notiz-Apps oder Lernplattformen verteilt. Dadurch geht schnell der Überblick verloren, Aufgaben werden vergessen oder zu spät begonnen und der organisatorische Aufwand steigt.
 
-TaskStudy adressiert dieses Problem, indem zentrale studienrelevante Informationen an einem Ort gebündelt und übersichtlich dargestellt werden. Ziel ist es, Studierenden eine einfache, klare und benutzerfreundliche Plattform zu bieten, mit der sie ihre Module, To-dos, Termine und Prüfungen effizient organisieren können.
+TaskStudy soll Studierende dabei unterstützen, ihre studienrelevanten Informationen zentral an einem Ort zu verwalten und den Überblick über anstehende Aufgaben, Lernziele und Prüfungen zu behalten.
 - **Problem:** 
-Fehlendes zentrales System für die strukturierte Planung von Modulen, To-dos, Lernzielen und Prüfungsterminen führt zu Unübersichtlichkeit, Prokrastination und Stress.
+Es fehlt häufig ein zentrales System zur Verwaltung von Modulen, To-dos, Lernzielen und Prüfungsterminen. Dies kann zu Unübersichtlichkeit, Prokrastination und zusätzlichem Stress führen.
 - **Ziele:** 
-Übersicht über alle studienrelevanten Aufgaben und Termine schaffen, 
-Zeitmanagement und Selbstorganisation verbessern, 
-Lernfortschritt durch klare Modul- und Lernzielstruktur unterstützen, 
-Stress durch bessere Planung und Transparenz reduzieren 
+  - Übersicht über alle studienrelevanten Aufgaben und Termine schaffen
+  - Zeitmanagement und Selbstorganisation verbessern
+  - Lernfortschritt durch klare Modul- und Lernzielstruktur unterstützen
+  - Stress durch bessere Planung und Transparenz reduzieren
 - **Primäre Zielgruppe:** 
-Studierende mit mehreren Modulen, Deadlines und Prüfungsterminen, die ihre Studienorganisation verbessern möchten  
+Studierende, die mehrere Module, Aufgaben und Prüfungstermine organisieren und ihren Studienalltag strukturierter gestalten möchten.
 - **Weitere Stakeholder:** 
-Dozierende oder Coaches indirekt, sofern Studierende strukturierter und besser vorbereitet arbeiten
-
+  - Dozierende (indirekt durch besser organisierte Studierende)
+  - Coaches oder Mentorinnen und Mentoren, die Studierende bei der Studienorganisation unterstützen
 
 ## 2. Lösungsidee
-TaskStudy ist eine zentrale Study Planner App, die verschiedene organisatorische Funktionen in einer übersichtlichen Plattform kombiniert. Die Anwendung ermöglicht es Studierenden, Module anzulegen, To-dos und Termine zu verwalten sowie Prüfungstermine im Blick zu behalten. Zusätzlich können Lernziele pro Modul angezeigt werden, um die persönliche Lernstruktur zu verbessern.
+TaskStudy ist eine Study-Planner-App, welche die wichtigsten organisatorischen Funktionen des Studienalltags in einer zentralen Anwendung vereint. Nutzerinnen und Nutzer können Module verwalten, Lernziele festlegen, Aufgaben organisieren sowie Prüfungstermine und weitere wichtige Termine erfassen.
 
-Die Startseite bietet einen direkten Überblick über die wichtigsten aktuellen Informationen, insbesondere über die heutigen To-dos sowie bevorstehende Prüfungstermine. Dadurch erhalten Studierende sofort einen klaren Tagesfokus. Über die Modulübersicht können neue Module hinzugefügt und spezifische Lernziele eingesehen werden. Neue To-dos lassen sich jederzeit erstellen, verwalten und nach Erledigung abhaken.
+Die Startseite bietet einen schnellen Überblick über aktuelle To-dos, den Lernfortschritt sowie bevorstehende Prüfungen und Termine. Dadurch können Studierende ihre Aufgaben priorisieren und ihren Lernfortschritt einfacher verfolgen.
 - **Kernfunktionalität:** 
 Dashboard / Startseite mit Übersicht über heutige To-dos und Prüfungstermine,
 Verwaltung von To-dos (erstellen, anzeigen, erledigen),
