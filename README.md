@@ -110,17 +110,22 @@ Die Entscheidung fiel auf diese Variante, da sie die wichtigsten Informationen o
 - **Mockup:**
 https://www.figma.com/proto/FuEVr0Ug7O3wiwPe6l42qx/StudyPlanner?node-id=0-1&t=JeL9XfYHCEZeJTad-1
 
-Startseite:
+Auf der Startseite erhält die Nutzerin oder der Nutzer einen schnellen Überblick über aktuelle To-dos, bevorstehende Termine und Prüfungstermine. Zusätzlich werden die vorhandenen Module sowie deren Lernfortschritt angezeigt, sodass die wichtigsten Informationen direkt sichtbar sind.
 ![Startseite Figma](static/images/Figma_Startseite.png)
-Modulübersicht:
+
+Die Modulübersicht zeigt alle erstellten Module an. Von hier aus können bestehende Module ausgewählt oder neue Module hinzugefügt werden.
 ![Moduluebersicht Figma](static/images/FigmaModulUebersicht.png)
-Modulseite:
+
+Auf der Modulseite werden die Lernziele und To-Dos eines einzelnen Moduls angezeigt.
 ![Modulseite Figma](static/images/Figma_ModulSeite.png)
-Neues Modul:
+
+Über diese Seite können neue Module erstellt werden. Dabei muss man den Dozenten und den Namen vom Modul angeben.
 ![Neues Modul Figma](static/images/Figma_NeuesModul.png)
-Termine:
+
+Die Terminübersicht zeigt alle erfassten Termine, Prüfungstermine und To-Dos an. Dadurch können anstehende Ereignisse einfach eingesehen und erledigt werden.
 ![Termine Figma](static/images/Figma_Termine.png)
-Neuer Termin:
+
+Auf dieser Seite können neue Termine, Prüfungstermine oder To-dos erfasst werden. Die Eingabe erfolgt über ein Formular mit den wichtigsten Informationen zum jeweiligen Eintrag.
 ![Neuer Termin Figma](static/images/Figma_NeuerTermin.png)
 
 ### 3.4 Prototype
@@ -128,19 +133,64 @@ Neuer Termin:
 #### 3.4.1. Entwurf (Design)
 Beschreibt die Gestaltung und Interaktion.
 > **Hinweis:** Hier wird der **Prototyp** beschrieben, nicht das **Mockup**.
-- **Informationsarchitektur:** _[z. B. Seiten/Navigation: Konzept, nicht die technische Umsetzung]_
+- **Informationsarchitektur:** Die Anwendung besteht aus drei zentralen Bereichen: Dashboard, Module und Termine. Über die Navigationsleiste können Benutzer zwischen den Bereichen wechseln.
+
+Das Dashboard bietet eine Übersicht über die heutigen To-Dos, den Lernfortschritt der Module sowie anstehende Termine und Prüfungstermine. Im Bereich „Module“ werden alle Module angezeigt. Jedes Modul besitzt eine Detailseite mit Lernzielen und modulbezogenen To-Dos. Im Bereich „Termine“ werden To-Dos, Termine und Prüfungstermine verwaltet.
+
+Die Navigation wurde bewusst einfach gehalten, damit Benutzer schnell zwischen den wichtigsten Funktionen wechseln können.
 - **User Interface Design:** _[wichtige Screens: Screenshots mit kurzen Erläuterungen]_
 - **Designentscheidungen:** _[zentrale Entscheidungen und Begründungen]_
 
 #### 3.4.2. Umsetzung (Technik)
 Fasst die technische Realisierung zusammen.
 - **Technologie-Stack:** _[SvelteKit, Bibliotheken falls genutzt]_
-- **Tooling:** _[IDE/Erweiterungen, lokale/Cloud-Tools; den Einsatz von KI beschreiben Sie im Kapitel **KI-Deklaration**]_  
+- **Tooling:** 
+Für die Entwicklung wurden folgende Werkzeuge eingesetzt:
+  - Visual Studio Code als Entwicklungsumgebung
+  - Git und GitHub zur Versionsverwaltung
+  - MongoDB Atlas zur Datenhaltung
+  - Netlify für das Deployment
+_[IDE/Erweiterungen, lokale/Cloud-Tools]_  
 - **Struktur & Komponenten:** _[Seiten, Routen, State/Stores, wichtige Komponenten]_
-- **Daten & Schnittstellen:** _[Wie werden Daten gespeichert, verwaltet, abgerufen?]_
-- **Deployment:** 
+**Wichtige Seiten:**
+- Dashboard (/)
+- Modulübersicht (/modules)
+- Modulerstellung (/modules/create)
+- Moduldetailseite (/modules/[module_id])
+- Terminübersicht (/tasks)
+- Terminerstellung (/tasks/create)
+
+**Wichtige Komponenten:**
+- ModuleCard.svelte zur Darstellung eines Moduls
+- TaskList.svelte zur Anzeige und Filterung von Aufgaben und Terminen
+- DynamicList.svelte zur Verwaltung von Lernzielen bei der Modulerstellung
+- **Daten & Schnittstellen:** Die Daten werden in einer MongoDB-Datenbank gespeichert.
+
+Es existieren zwei zentrale Datentypen:
+**Module:**
+- Abkürzung
+- Name
+- Dozent
+- Lernziele
+- Favorit
+
+**Tasks:**
+- Name
+- ModulID (Referenz auf ein Modul)
+- Typ (To-Do, Termin oder Prüfungstermin)
+- Datum
+- Fertig-Status
+
+Die Daten werden über serverseitige Funktionen geladen und aktualisiert. Formularaktionen werden verwendet, um neue Datensätze zu erstellen, bestehende Einträge zu bearbeiten oder zu löschen.
+- **Deployment:**
+Die Anwendung wurde auf Netlify veröffentlicht und ist unter folgender Adresse erreichbar:
 https://taskstudy.netlify.app/ 
-- **Besondere Entscheidungen:** _[z. B. Trade-offs, Vereinfachungen]_  
+- **Besondere Entscheidungen:** 
+Bei der Planung wurden zusätzliche Funktionen wie ein Dateiupload für Lernunterlagen oder ein integrierter Fokus-Timer (Pomodoro-Timer) in Betracht gezogen. Nach einer Analyse der Projektziele wurde jedoch bewusst auf diese Funktionen verzichtet.
+
+Der Schwerpunkt der Anwendung liegt auf der Organisation des Studiums und nicht auf der direkten Unterstützung des Lernprozesses. Die App soll Studierenden helfen, Module, Lernziele, To-Dos und Termine übersichtlich zu verwalten und den eigenen Lernfortschritt zu verfolgen. Funktionen wie Dateiverwaltung oder Lern-Timer hätten den Fokus der Anwendung erweitert und die Komplexität erhöht, ohne einen wesentlichen Mehrwert für die Kernfunktion der Organisation zu bieten.
+
+Durch diese Entscheidung konnte die Anwendung übersichtlich gehalten und die vorhandenen Funktionen benutzerfreundlich umgesetzt werden.
 
 ### 3.5 Validate
 - **Bilder der getesteten Version**
