@@ -20,7 +20,7 @@ export const actions = {
             await db.updateModule(module);
         }
     },
-    create: async ({ request, params }) => {
+    createLearninggoal: async ({ request, params }) => {
         console.log("create")
         const data = await request.formData()
         const name = data.get("learninggoal")
@@ -28,6 +28,17 @@ export const actions = {
         const module_id = params.module_id
 
         await db.addLearningGoal(name, module_id)
+    },
+    createTask: async ({ request, params }) => {
+        console.log("create")
+        const data = await request.formData()
+        const name = data.get("task")
+        const datum = data.get("datum")
+        const modulID = params.module_id
+        const task = {name, modulID, typ: "To-Do", datum, fertig: false}
+        console.log(name)
+        
+        await db.createTask(task)
     },
     toggleTask: async ({ request }) => {
         const data = await request.formData();

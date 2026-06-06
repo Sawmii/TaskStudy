@@ -1,6 +1,8 @@
 <script>
-    let { data } = $props();
+    import TaskList from "$lib/components/Tasklist.svelte";
     import "../../styles.css";
+
+    let { data } = $props();
 </script>
 
 <div class="container-fluid p-4 page-container">
@@ -80,7 +82,7 @@
                     {/each}
                 {/if}
             </div>
-            <form method="POST" action="?/create">
+            <form method="POST" action="?/createLearninggoal">
                 <div class="mb-3">
                     <label for="" class="form-label">Lernziel</label>
                     <input
@@ -95,44 +97,46 @@
 
         <div class="col-12 col-lg-6">
             <h3 class="fw-bold mb-3">To-Dos</h3>
-            {#if data.tasks.length === 0}
-                <p class="text-muted">Keine To-Dos vorhanden.</p>
-            {:else}
-                {#each data.tasks as task}
-                    <div class="d-flex align-items-center mb-3">
-                        <form method="POST" action="?/toggleTask">
-                            <input type="hidden" name="id" value={task._id} />
+
+            <TaskList
+                tasks={data.tasks}
+                modules={[data.module]}
+                typ="To-Do"
+                showCheckboxes={true}
+                showTitle={false}
+                showAddButton={false}
+            />
+
+            <form method="POST" action="?/createTask">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="mb-3">
+                            <label for="task" class="form-label">ToDo</label>
                             <input
-                                type="hidden"
-                                name="fertig"
-                                value={!task.fertig}
+                                id="task"
+                                name="task"
+                                class="form-control"
+                                type="text"
+                                required
                             />
-                            <input
-                                class="form-check-input me-4"
-                                type="checkbox"
-                                checked={task.fertig}
-                                onchange={(e) => e.target.form.requestSubmit()}
-                            />
-                        </form>
-                        <span class="fs-5">
-                            {task.name}
-                        </span>
-                        <form
-                            method="POST"
-                            action="?/deleteTask"
-                            class="ms-auto"
-                        >
-                            <input type="hidden" name="id" value={task._id} />
-                            <button
-                                type="submit"
-                                class="remove-btn d-flex align-items-center justify-content-center"
-                            >
-                                <span class="remove-icon">&times;</span>
-                            </button>
-                        </form>
+                        </div>
                     </div>
-                {/each}
-            {/if}
+
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="datum" class="form-label">Datum</label>
+                            <input
+                                id="datum"
+                                name="datum"
+                                class="form-control"
+                                type="date"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn mb-3">To Do hinzufügen</button>
+            </form>
         </div>
     </div>
     <div class="mt-auto">

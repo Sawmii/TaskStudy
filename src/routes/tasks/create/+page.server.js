@@ -1,9 +1,10 @@
 import db from "$lib/db.js";
 import { redirect } from '@sveltejs/kit';
 
-export async function load() {
+export async function load({url}) {
     return {
-        modules: await db.getModules()
+        modules: await db.getModules(),
+        type: url.searchParams.get("type")
     };
 }
 

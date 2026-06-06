@@ -167,7 +167,7 @@ Die zentralen Funktionen konnten grundsätzlich erfolgreich genutzt werden. Beso
 |-----------|-------------|------------|
 | Hoch | Sichtbarkeit der Funktion **„Lernziel hinzufügen“** verbessern | Beide Testpersonen fanden die Funktion nicht sofort und hatten Schwierigkeiten, Lernziele zu erfassen. |
 | Hoch | Erfolgsfeedback nach dem Speichern anzeigen | User sollen direkt erkennen können, dass ihre Aktion erfolgreich ausgeführt wurde. |
-| Hoch | Filteroption für To-Dos integrieren | Bei einer grösseren Anzahl von Aufgaben kann die Übersicht schnell verloren gehen. Eine Filterfunktion erleichtert das Auffinden relevanter To-Dos und verbessert die Benutzerfreundlichkeit. |
+| Hoch | Filteroption integrieren | Bei einer grösseren Anzahl von Aufgaben und Terminen kann die Übersicht schnell verloren gehen. Eine Filterfunktion erleichtert das Auffinden relevanter Termine und verbessert die Benutzerfreundlichkeit. |
 | Mittel | Navigation nach Aktionen optimieren | Die Rückkehr zur vorherigen Ansicht war nicht immer klar ersichtlich und führte zu Unsicherheit. |
 | Mittel | Modul löschen ermöglichen | Mehrere Testpersonen erwarteten diese Funktion zur Verwaltung ihrer Module. |
 | Niedrig | Module nach Semester sortieren | Verbessert die Übersichtlichkeit bei einer grösseren Anzahl von Modulen. |
@@ -178,11 +178,17 @@ Die zentralen Funktionen konnten grundsätzlich erfolgreich genutzt werden. Beso
 Dokumentiert Erweiterungen über den Mindestumfang hinaus.
 > **Hinweis:** Jede Erweiterung ist separat nach dem folgenden Schema zu beschreiben.
 
-### Tasks Filterfunktion
-- **Beschreibung & Nutzen:** Die Tasks Filterfunktion wurde ergänzt, damit Nutzerinnen und Nutzer ihre Aufgaben gezielt filtern können. Gerade bei einer grösseren Anzahl von To-Dos verbessert dies die Übersichtlichkeit und erleichtert das Auffinden relevanter Aufgaben. Dadurch wird die Verwaltung der Aufgaben effizienter und die Anwendung benutzerfreundlicher.  
+### Filterfunktion
+- **Beschreibung & Nutzen:** Die Filterfunktion wurde ergänzt, damit User ihre Aufgaben und Termine gezielt filtern können. Gerade bei einer grösseren Anzahl von Terminen verbessert dies die Übersichtlichkeit und erleichtert das Auffinden relevanter Aufgaben. Dadurch wird die Verwaltung der Aufgaben effizienter und die Anwendung benutzerfreundlicher.  
 - **Wo umgesetzt:** Die Erweiterung wurde im Frontend umgesetzt. In der Komponente TaskList.svelte wurden zusätzliche Filter-Buttons hinzugefügt, mit denen die angezeigten Aufgaben gefiltert werden können.
 - **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
 - **Aus Evaluation abgeleitet?:** Ja. Die Erweiterung wurde aufgrund des Feedbacks einer Testperson während der Evaluation umgesetzt. Es wurde angemerkt, dass bei vielen Aufgaben eine Filtermöglichkeit hilfreich wäre, um die Übersicht zu behalten und schneller die gewünschten To-Dos zu finden.
+
+### Module favorisieren  
+- **Beschreibung & Nutzen:** Es wurde die Möglichkeit ergänzt, Module als Favoriten zu markieren. Dadurch können besonders wichtige oder aktuell relevante Module hervorgehoben werden. Diese Erweiterung verbessert die Übersichtlichkeit, da sich während eines mehrjährigen Studiums eine grosse Anzahl von Modulen ansammeln kann. Durch die Favorisierung können häufig verwendete Module schneller gefunden und von weniger relevanten Modulen unterschieden werden.  
+- **Wo umgesetzt:** Die Erweiterung wurde im Frontend und in der Datenbank umgesetzt. In der Modulübersicht wurde eine Funktion hinzugefügt, mit der Module als Favorit markiert oder die Markierung wieder entfernt werden können. Der Favoritenstatus wird in der Datenbank gespeichert, damit die Auswahl dauerhaft erhalten bleibt. 
+- **Referenz:** _[Wo wird die Erweiterung auch noch beschrieben, z.B. Screenshot oder Beschreibung in einem anderen Kapitel]_  
+- **Aus Evaluation abgeleitet?:** Nein. Die Erweiterung entstand aus einer eigenen Beobachtung während der Entwicklung. Da sich über mehrere Semester beziehungsweise Studienjahre viele Module ansammeln können, wurde eine Favoritenfunktion als sinnvolle Möglichkeit zur Verbesserung der Übersichtlichkeit und Benutzerfreundlichkeit implementiert.
 
 ### _[4.x Kurzbeschreibung / Titel]_  
 - **Beschreibung & Nutzen:** _[Was wurde erweitert? Warum?]_  

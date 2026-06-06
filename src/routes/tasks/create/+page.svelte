@@ -1,5 +1,5 @@
 <script>
-    import "../../styles.css"
+    import "../../styles.css";
     let { data, form } = $props();
 </script>
 
@@ -10,9 +10,21 @@
             <label for="" class="form-label">Kategorie</label>
             <select name="kategorie" class="form-select" required>
                 <option value="">Bitte auswählen</option>
-                <option value="To-Do">To-Do</option>
-                <option value="Termin">Termin</option>
-                <option value="Prüfungstermin">Prüfungstermin</option>
+
+                <option value="To-Do" selected={data.type === "To-Do"}>
+                    To-Do
+                </option>
+
+                <option value="Termin" selected={data.type === "Termin"}>
+                    Termin
+                </option>
+
+                <option
+                    value="Prüfungstermin"
+                    selected={data.type === "Prüfungstermin"}
+                >
+                    Prüfungstermin
+                </option>
             </select>
         </div>
 
@@ -31,12 +43,12 @@
 
         <div class="mb-3">
             <label for="" class="form-label">Titel</label>
-            <input name="titel" class="form-control" type="text" required/>
+            <input name="titel" class="form-control" type="text" required />
         </div>
 
         <div class="mb-3">
             <label for="" class="form-label">Datum</label>
-            <input name="datum" class="form-control" type="date" required/>
+            <input name="datum" class="form-control" type="date" required />
         </div>
 
         <div class="d-flex justify-content-between align-items-center">

@@ -9,6 +9,7 @@
         showTitle = true,
         showDate = true,
         showFilter = true,
+        showAddButton = true,
     } = $props();
 
     // Todos filtern
@@ -59,11 +60,15 @@
     {#if showTitle}
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h1 class="fw-bold m-0">{typ}</h1>
-            <a
-                href="/tasks/create"
-                class="btn add-btn btn-outline-dark d-flex align-items-center justify-content-center"
-                ><img src="../images/add.svg" alt="" /></a
-            >
+
+            {#if showAddButton}
+                <a
+                    href={"/tasks/create?type=" + typ}
+                    class="btn add-btn btn-outline-dark d-flex align-items-center justify-content-center"
+                >
+                    <img src="../images/add.svg" alt="" />
+                </a>
+            {/if}
         </div>
     {/if}
 
@@ -129,7 +134,11 @@
                 {#each tasksForDate as task}
                     <div class="d-flex align-items-center mb-2 task-item ps-3">
                         {#if showCheckboxes}
-                            <form method="POST" action="?/toggleTask" use:enhance>
+                            <form
+                                method="POST"
+                                action="?/toggleTask"
+                                use:enhance
+                            >
                                 <input
                                     type="hidden"
                                     name="id"
