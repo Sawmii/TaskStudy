@@ -12,8 +12,12 @@
         <form method="POST" action="?/toggleFavoriteModule">
             <input type="hidden" name="id" value={data.module._id} />
 
-            <button type="submit" class="favorite-btn" title="Favorit umschalten">
-                <img src="/images/Favorite.png" alt="Favorit" class="favorite-icon"/>
+            <button type="submit" class="favorite-btn" class:is-favorite={data.module.favorit} title="Favorit umschalten">
+                {#if data.module.favorit}
+                    &#9733;
+                {:else}
+                    &#9734;
+                {/if}
             </button>
         </form>
     </div>
