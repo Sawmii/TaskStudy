@@ -51,5 +51,10 @@ export const actions = {
         const id = data.get("id");
         await db.deleteModule(id);
         throw redirect(303, '/modules');
+    },
+    toggleFavoriteModule: async ({ request }) => {
+        const data = await request.formData();
+        const id = data.get("id");
+        await db.toggleFavoriteModule(id);
     }
 };

@@ -4,7 +4,20 @@
 </script>
 
 <div class="container-fluid p-4">
-    <h1 class="fw-bold">{data.module.abkuerzung} - {data.module.name}</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="fw-bold m-0">
+            {data.module.abkuerzung} - {data.module.name}
+        </h1>
+
+        <form method="POST" action="?/toggleFavoriteModule">
+            <input type="hidden" name="id" value={data.module._id} />
+
+            <button type="submit" class="favorite-btn" title="Favorit umschalten">
+                <img src="/images/Favorite.png" alt="Favorit" class="favorite-icon"/>
+            </button>
+        </form>
+    </div>
+
     <div class="fs-5 text-muted">{data.module.dozent}</div>
 
     <div class="row mt-5">

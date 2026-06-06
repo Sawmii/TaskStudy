@@ -17,7 +17,8 @@ export const actions = {
             name: data.get("name"),
             abkuerzung: data.get("abkuerzung"),
             dozent: data.get("dozent"),
-            lernziele
+            lernziele,
+            favorit: false
         }
 
         console.log(module)

@@ -110,6 +110,22 @@ async function deleteModule(id) {
   return null;
 }
 
+async function toggleFavoriteModule(id) {
+  try {
+    const module = await getModule(id);
+
+    module.favorit = !module.favorit;
+
+    await updateModule(module);
+
+    return id;
+  } catch (error) {
+    console.log(error.message);
+  }
+
+  return null;
+}
+
 //////////////////////////////////////////
 // Tasks
 //////////////////////////////////////////
@@ -240,6 +256,7 @@ export default {
   createModule,
   updateModule,
   deleteModule,
+  toggleFavoriteModule,
   getTasks,
   getTasksByModule,
   createTask,
