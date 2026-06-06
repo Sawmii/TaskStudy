@@ -217,6 +217,22 @@ async function addLearningGoal(name, id) {
   return null;
 }
 
+async function deleteLearninggoal(id, index) {
+  try {
+    const module = await getModule(id);
+
+    module.lernziele.splice(index, 1);
+
+    await updateModule(module);
+
+    return id;
+  } catch (error) {
+    console.log(error.message);
+  }
+
+  return null;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getModules,
@@ -229,5 +245,6 @@ export default {
   createTask,
   updateTask,
   deleteTask,
-  addLearningGoal
+  addLearningGoal,
+  deleteLearninggoal
 };

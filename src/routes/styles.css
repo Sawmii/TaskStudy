@@ -30,7 +30,8 @@ body {
     min-width: none;
 }
 
-.btn-secondary:hover, .btn-learninggoals:hover {
+.btn-secondary:hover,
+.btn-learninggoals:hover {
     background-color: #ccdbdb;
     color: black;
 }
@@ -40,6 +41,25 @@ h1 {
 }
 
 .sidebar {
-    background-color: #ebebef; 
+    background-color: #ebebef;
     min-height: calc(100vh - 94px);
+}
+
+.remove-btn {
+    border: none;
+    background: transparent;
+    color: #999;
+    font-size: 1.6rem;
+    line-height: 1;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+}
+
+.remove-btn:hover {
+    color: rgb(228, 3, 3);
+}
+
+.remove-icon {
+    margin-top: -5px;
 }

@@ -142,15 +142,9 @@
                             ?.abkuerzung}: {task.name}
                     </span>
 
-                    <form
-                        method="POST"
-                        action="?/deleteTask"
-                        use:enhance
-                        class="ms-auto"
-                    >
+                    <form method="POST" action="?/deleteTask" use:enhance class="ms-auto">
                         <input type="hidden" name="id" value={task._id} />
-                        <button type="submit" class="delete-btn">&times;</button
-                        >
+                        <button type="submit" class="delete-btn">&times;</button>
                     </form>
                 </div>
             {/each}
