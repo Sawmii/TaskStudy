@@ -23,7 +23,7 @@
         <DynamicList name="lernziele" bind:items={lernziele}/>
         <div class="d-flex justify-content-between align-items-center">
             <a href="/modules" class="btn btn-secondary">Abbrechen</a>
-            <button type="submit" class="btn">Modul erstellen</button>
+            <button type="submit" class="btn ">Modul erstellen</button>
         </div>
         
     </form>

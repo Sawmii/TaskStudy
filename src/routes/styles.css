@@ -38,6 +38,7 @@ body {
     padding: 8px;
     font-size: 1.2rem;
     min-width: none;
+    color: black;
 }
 
 .btn-secondary:hover,

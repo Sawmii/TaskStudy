@@ -47,11 +47,11 @@ Die Startseite bietet einen schnellen Überblick über aktuelle To-dos, den Lern
   - Lernfortschritt pro Modul visualisieren
   - Module als Favoriten markieren
   - Navigation zwischen Startseite, Modulübersicht und Aufgabenbereichen
-- **Annahmen [Optional]:**
+- **Annahmen:**
   - Eine zentrale Plattform verbessert die Übersicht über studienrelevante Informationen.
   - Eine Verknüpfung von Modulen, Lernzielen und Aufgaben unterstützt die Lernorganisation.
   - Eine einfache und übersichtliche Benutzeroberfläche erhöht die Nutzungsbereitschaft.
-- **Abgrenzung [Optional]:** 
+- **Abgrenzung:** 
   - Keine KI-gestützten Lernempfehlungen
   - Keine sozialen oder kollaborativen Funktionen
   - Kein vollständiger Ersatz für Lernplattformen wie Moodle
@@ -63,21 +63,22 @@ Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergeb
 ### 3.1 Understand & Define
 - **Zielgruppenverständnis:** 
 Als Studentin bin ich selbst Teil der primären Zielgruppe und kenne die Schwierigkeiten aus eigener Erfahrung. Dazu gehören insbesondere das Vergessen von Aufgaben, das Aufschieben von Lernphasen bis kurz vor Prüfungen sowie der Verlust des Überblicks über verschiedene Module und Deadlines.
-Die Analyse zeigte folgende zentrale Problemräume:
-Zeitmanagement bei mehreren parallelen Modulen,
-Fehlende Struktur und Priorisierung beim Lernen,
-Stress durch vergessene oder kurzfristig erledigte Aufgaben,
-Verteilte Informationen auf unterschiedliche Plattformen wie Moodle, Kalender oder Notiz-Apps
 
-Zusätzlich wurde eine Recherche zu bestehenden Lösungen wie StudySmarter durchgeführt. Dabei zeigte sich, dass viele bestehende Apps zwar umfangreiche Funktionen bieten, jedoch häufig überladen wirken oder Premium-Funktionen voraussetzen. Für viele Studierende besteht daher Bedarf nach einer einfacheren, fokussierten Ergänzung zu Moodle, die primär organisatorische Unterstützung bietet.
+Aus meinen Erfahrungen und der Analyse haben sich folgende Probleme gezeigt:
+- Zeitmanagement bei mehreren parallel laufenden Modulen
+- Fehlende Struktur und Priorisierung beim Lernen
+- Stress durch vergessene oder kurzfristig erledigte Aufgaben
+- Verteilte Informationen auf unterschiedliche Plattformen wie Moodle, Kalender oder Notiz-Apps
+
+Zusätzlich habe ich bestehende Lösungen wie StudySmarter angeschaut. Dabei ist mir aufgefallen, dass viele dieser Anwendungen sehr umfangreich sind und zahlreiche Funktionen bieten. Für die reine Studienorganisation wirken sie jedoch teilweise überladen. Zudem stehen einige Funktionen nur in kostenpflichtigen Versionen zur Verfügung. Daraus entstand die Idee, eine einfache und übersichtliche Anwendung zu entwickeln, die sich auf die Organisation des Studienalltags konzentriert.
 - **Wesentliche Erkenntnisse:**
   - Viele Studierende vergessen Aufgaben oder beginnen zu spät mit der Bearbeitung.
   - Moodle dient primär als Lernplattform, bietet jedoch keine zentrale, alltagsnahe Organisationslösung.
   - Bestehende Apps sind oft zu komplex oder enthalten unnötige Zusatzfunktionen.
   - Eine reduzierte, agendaähnliche App mit Fokus auf To-dos, Termine und Module könnte den Studienalltag sinnvoll ergänzen.
 ### 3.2 Sketch
-- **Variantenüberblick:** Im Rahmen der Ideensammlung wurden mehrere Varianten für die Struktur und Funktionen der Anwendung entwickelt. Dabei wurden unterschiedliche Möglichkeiten zur Darstellung von Terminen, Prüfungen und Lernfortschritten untersucht. Einige Varianten setzten auf eine klassische Kalenderansicht, während andere Termine in einer Listenansicht darstellten. Zudem wurden zusätzliche Funktionen wie eine separate Prüfungsübersicht, ein Fokus-Timer, das Hochladen von Dateien sowie die Bewertung von Lernsessions skizziert. Ziel war es, verschiedene Ansätze zu vergleichen und die für Studierende übersichtlichste und nützlichste Lösung auszuwählen.
-- **Skizzen:** Im Rahmen der Crazy-8s-Methode wurden mehrere Lösungsansätze für die Anwendung entwickelt. Die einzelnen Skizzen unterscheiden sich vor allem in der Darstellung von Terminen, Prüfungen, Lernfortschritten und zusätzlichen Funktionen.
+- **Variantenüberblick:** Im Rahmen der Ideensammlung wurden mehrere Varianten für die Struktur und Funktionen der Anwendung entwickelt. Dabei wurden unterschiedliche Möglichkeiten zur Darstellung von Terminen, Prüfungen und Lernfortschritten untersucht. Einige Varianten setzten auf eine klassische Kalenderansicht, während andere Termine in einer Listenansicht darstellten. Zudem wurden zusätzliche Funktionen wie eine separate Prüfungsübersicht, ein Fokus-Timer, das Hochladen von Dateien sowie die Bewertung von Lernsessions skizziert. Ziel war es herauszufinden, welche Funktionen für Studierende tatsächlich hilfreich sind und wie diese möglichst übersichtlich dargestellt werden können.
+- **Skizzen:** Im Rahmen der Crazy-8s-Methode habe ich mehrere Lösungsansätze für die Anwendung entwickelt. Die einzelnen Skizzen unterscheiden sich vor allem in der Darstellung von Terminen, Prüfungen, Lernfortschritten und zusätzlichen Funktionen.
   - **Startseite:** Übersicht über die heutigen To-dos sowie den Lernfortschritt der einzelnen Module.
   - **Kalenderansicht:** Termine und Aufgaben werden in einer klassischen Kalenderansicht dargestellt, um einen Überblick über die zeitliche Planung zu ermöglichen.
   - **Modulansicht:** Anzeige der To-dos, Herausforderungen und Lernfortschritte eines einzelnen Moduls.
@@ -88,18 +89,17 @@ Zusätzlich wurde eine Recherche zu bestehenden Lösungen wie StudySmarter durch
 
 ![8s](static/images/8s.png)
 
-Während des Skizzierens wurden verschiedene Möglichkeiten zur Darstellung von Terminen getestet. In einer Variante wurden Termine innerhalb einer Kalenderansicht angezeigt. In einer anderen Variante wurden Termine als Liste dargestellt, da wichtige Termine und Prüfungen dadurch schneller erfasst werden können und die Übersichtlichkeit erhöht wird.
+Während des Skizzierens habe ich verschiedene Möglichkeiten zur Darstellung von Terminen ausprobiert. In einer Variante wurden Termine in einer Kalenderansicht dargestellt. In einer anderen Variante wurden sie als Liste angezeigt. Die Listenansicht wirkte dabei übersichtlicher, da wichtige Termine und Prüfungen schneller erfasst werden können.
 
-Auch die Prüfungen wurden zunächst als eigenständige Seite konzipiert. Im weiteren Verlauf wurde jedoch entschieden, wichtige Prüfungstermine zusätzlich auf der Startseite anzuzeigen, damit diese direkt sichtbar sind und nicht erst über eine separate Ansicht aufgerufen werden müssen.
+Auch die Prüfungen waren zunächst als eigene Seite geplant. Die Idee dahinter war, Prüfungstermine klar von anderen Terminen zu trennen und separat darzustellen.
 
-Anschliessend wurde Feedback eingeholt. Besonders positiv bewertet wurde die Idee einer zentralen Übersicht für Lernfortschritte und Aufgaben. Zudem wurde vorgeschlagen, Lernziele stärker auf der Startseite sichtbar zu machen sowie Filtermöglichkeiten für Prüfungen vorzusehen.
+Anschliessend habe ich Feedback zu den Skizzen eingeholt. Besonders positiv bewertet wurde die zentrale Übersicht über Lernfortschritte und Aufgaben. Ausserdem wurde vorgeschlagen, wichtige Termine und Prüfungen direkt auf der Startseite anzuzeigen, damit sie jederzeit sichtbar sind. Aufgrund dieses Feedbacks habe ich mich entschieden, die wichtigsten Termine und Prüfungstermine zusätzlich auf der Startseite zu integrieren.
 
 
 ### 3.3 Decide
-- **Gewählte Variante & Begründung:** Basierend auf den Skizzen und dem erhaltenen Feedback wurde eine Variante gewählt, die den Fokus auf Übersichtlichkeit und einfache Bedienung legt. Die Startseite wurde so gestaltet, dass die wichtigsten Informationen direkt sichtbar sind. Dazu gehören aktuelle To-dos, Lernfortschritte der Module sowie bevorstehende Prüfungs- und Abgabetermine.
+- **Gewählte Variante & Begründung:** Basierend auf den Skizzen und dem erhaltenen Feedback wurde eine Variante gewählt, die den Fokus auf Übersichtlichkeit und einfache Bedienung legt. Die Startseite wurde so gestaltet, dass die wichtigsten Informationen direkt sichtbar sind. Dazu gehören aktuelle To-dos, Lernfortschritte der Module sowie bevorstehende Prüfungstermine und übrige wichtige Termine.
 
-Die Entscheidung fiel auf diese Variante, da sie die wichtigsten Informationen ohne unnötige Komplexität darstellt und Studierende dadurch schneller einen Überblick über ihre Aufgaben erhalten. Zusätzlich ermöglicht die direkte Verlinkung zu den Modulen einen effizienten Zugriff auf Lernziele und Fortschritte.
-
+Die Entscheidung fiel auf diese Variante, da sie die wichtigsten Informationen ohne unnötige Komplexität darstellt und Studierende dadurch schneller einen Überblick über ihre Aufgaben erhalten. Zusätzlich ermöglicht es die direkte Verlinkung zu den Modulenseiten und damit einen schnellen Zugriff auf die Lernziele und To-Dos.
 ![Skizze](static/images/Skizze.png)
 - **End-to-End-Ablauf:**
   1. Die Nutzerin oder der Nutzer öffnet die Startseite und erhält einen Überblick über aktuelle To-dos, Lernfortschritte sowie bevorstehende Termine und Prüfungen.
@@ -137,21 +137,54 @@ Beschreibt die Gestaltung und Interaktion.
 
 Das Dashboard bietet eine Übersicht über die heutigen To-Dos, den Lernfortschritt der Module sowie anstehende Termine und Prüfungstermine. Im Bereich „Module“ werden alle Module angezeigt. Jedes Modul besitzt eine Detailseite mit Lernzielen und modulbezogenen To-Dos. Im Bereich „Termine“ werden To-Dos, Termine und Prüfungstermine verwaltet.
 
-Die Navigation wurde bewusst einfach gehalten, damit Benutzer schnell zwischen den wichtigsten Funktionen wechseln können.
-- **User Interface Design:** _[wichtige Screens: Screenshots mit kurzen Erläuterungen]_
-- **Designentscheidungen:** _[zentrale Entscheidungen und Begründungen]_
+Die Navigation wurde einfach gehalten, damit Benutzer schnell zwischen den wichtigsten Funktionen wechseln können.
+- **User Interface Design:**
+**Startseite:** Die heutigen To-Dos und der Lernfortschritt werden links angezeigt, Termine und Prüfungstermine rechts. Um diese Bereiche klar voneinander zu trennen, wurde die rechte Spalte etwas dunkler gestaltet. Die Filter sind bewusst dezent gehalten, damit der Fokus auf den Inhalten und den wichtigsten Aktionen liegt.
+![UI Startseite](static/images/StartseiteUI.png)
+
+**Modulerstellung:** Auf dieser Seite können Module erstellt und direkt mit Lernzielen ergänzt werden. Über den Button „Hinzufügen“ lassen sich weitere Lernziele hinzufügen. Die Lernziele können aber auch später auf der Modulseite ergänzt werden. Durch die unterschiedlichen Farben ist sofort erkennbar, welcher Button die Hauptaktion („Modul erstellen“) ausführt und welche Buttons nur unterstützende Funktionen haben.
+![UI Modul erstellen](static/images/UIModulErstellen.png)
+
+**Modulübersicht:** Die Module wurden bewusst schlicht und modern dargestellt. Neben den wichtigsten Informationen wie Modulname und Dozent wird auf der rechten Seite der aktuelle Lernfortschritt grafisch angezeigt. Dadurch ist auf einen Blick erkennbar, wie weit der Lernstand bereits fortgeschritten ist und bei welchen Modulen noch Lernbedarf besteht. Die Favoritenfunktion ermöglicht es zudem, häufig genutzte Module schnell hervorzuheben und zu finden.
+![UI Modul Uebersicht](static/images/UIModulSeite.png)
+
+- **Designentscheidungen:** Für die Anwendung wurde zuerst ein eigenes Logo mit ChatGPT erstellt. Die Farben und die grobe Gestaltung des Logos wurden dabei vorgegeben und dienten anschliessend als Grundlage für das gesamte Design der Anwendung. Die Akzentfarben der Benutzeroberfläche orientieren sich direkt am Logo und sorgen für ein einheitliches Erscheinungsbild.
+
+Bei der Gestaltung habe ich bewusst auf ein helles und schlichtes Design gesetzt. Wichtige Elemente wie Buttons, Filter oder Fortschrittsanzeigen werden durch die Akzentfarben hervorgehoben, während die Hintergründe eher dezent gehalten sind. So bleiben die wichtigsten Funktionen gut sichtbar, ohne dass die Oberfläche überladen wirkt.
+
+Generell war es mir wichtig, die Anwendung möglichst übersichtlich zu gestalten. Deshalb wurde auf unnötige Designelemente verzichtet und stattdessen auf eine klare Struktur, genügend Abstände und gut lesbare Schriftgrössen geachtet. Dadurch finden sich Benutzer schnell zurecht und sehen die wichtigsten Informationen auf einen Blick.
+
+**Wichtige Entscheidungen:**
+- Verwendung eines hellen Farbschemas für eine ruhige Darstellung
+- Akzentfarben aus dem Logo für ein einheitliches Erscheinungsbild
+- Farbliche Hervorhebung wichtiger Aktionen und Zustände
+- Fortschrittsanzeigen zur Darstellung des Lernfortschritts
+- Favoritenfunktion für häufig genutzte Module
 
 #### 3.4.2. Umsetzung (Technik)
 Fasst die technische Realisierung zusammen.
-- **Technologie-Stack:** _[SvelteKit, Bibliotheken falls genutzt]_
+- **Technologie-Stack:** 
+Für die Umsetzung wurde das Framework SvelteKit verwendet. Die Benutzeroberfläche wurde mit HTML, CSS und Bootstrap gestaltet.
+
+**Verwendete Technologien:**
+- SvelteKit
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
+- MongoDB
+
 - **Tooling:** 
 Für die Entwicklung wurden folgende Werkzeuge eingesetzt:
   - Visual Studio Code als Entwicklungsumgebung
   - Git und GitHub zur Versionsverwaltung
   - MongoDB Atlas zur Datenhaltung
   - Netlify für das Deployment
-_[IDE/Erweiterungen, lokale/Cloud-Tools]_  
-- **Struktur & Komponenten:** _[Seiten, Routen, State/Stores, wichtige Komponenten]_
+
+Darüber hinaus wurden keine zusätzlichen Erweiterungen, Frameworks oder Entwicklungstools verwendet. Der Einsatz von KI-Werkzeugen wird im Kapitel KI-Deklaration separat beschrieben.
+ 
+- **Struktur & Komponenten:**
+
 **Wichtige Seiten:**
 - Dashboard (/)
 - Modulübersicht (/modules)
@@ -160,13 +193,18 @@ _[IDE/Erweiterungen, lokale/Cloud-Tools]_
 - Terminübersicht (/tasks)
 - Terminerstellung (/tasks/create)
 
+Für die Filterfunktionen werden die Funktionen $state und $derived von Svelte verwendet. So können beispielsweise in der TaskList-Komponente offene, abgeschlossene, anstehende oder vergangene Einträge angezeigt werden. Auch auf der Startseite und in der Modulübersicht werden damit die Favoritenfilter umgesetzt. Änderungen an den Filtern werden direkt übernommen, sodass die angezeigten Daten automatisch aktualisiert werden.
+
 **Wichtige Komponenten:**
 - ModuleCard.svelte zur Darstellung eines Moduls
 - TaskList.svelte zur Anzeige und Filterung von Aufgaben und Terminen
 - DynamicList.svelte zur Verwaltung von Lernzielen bei der Modulerstellung
+Der Zustand der Anwendung wird hauptsächlich über die von SvelteKit bereitgestellten Datenladefunktionen und Formularaktionen verwaltet.
+
 - **Daten & Schnittstellen:** Die Daten werden in einer MongoDB-Datenbank gespeichert.
 
 Es existieren zwei zentrale Datentypen:
+
 **Module:**
 - Abkürzung
 - Name
@@ -181,16 +219,17 @@ Es existieren zwei zentrale Datentypen:
 - Datum
 - Fertig-Status
 
-Die Daten werden über serverseitige Funktionen geladen und aktualisiert. Formularaktionen werden verwendet, um neue Datensätze zu erstellen, bestehende Einträge zu bearbeiten oder zu löschen.
+Die Daten werden über serverseitige Funktionen geladen und aktualisiert. Formularaktionen werden verwendet, um neue Datensätze zu erstellen oder zu löschen.
 - **Deployment:**
-Die Anwendung wurde auf Netlify veröffentlicht und ist unter folgender Adresse erreichbar:
 https://taskstudy.netlify.app/ 
 - **Besondere Entscheidungen:** 
-Bei der Planung wurden zusätzliche Funktionen wie ein Dateiupload für Lernunterlagen oder ein integrierter Fokus-Timer (Pomodoro-Timer) in Betracht gezogen. Nach einer Analyse der Projektziele wurde jedoch bewusst auf diese Funktionen verzichtet.
+Während der Planung habe ich auch zusätzliche Funktionen wie einen Upload-Bereich für Lernunterlagen oder einen integrierten Fokus-Timer in Betracht gezogen. Nach einigen Überlegungen habe ich mich jedoch dagegen entschieden.
 
-Der Schwerpunkt der Anwendung liegt auf der Organisation des Studiums und nicht auf der direkten Unterstützung des Lernprozesses. Die App soll Studierenden helfen, Module, Lernziele, To-Dos und Termine übersichtlich zu verwalten und den eigenen Lernfortschritt zu verfolgen. Funktionen wie Dateiverwaltung oder Lern-Timer hätten den Fokus der Anwendung erweitert und die Komplexität erhöht, ohne einen wesentlichen Mehrwert für die Kernfunktion der Organisation zu bieten.
+Der Fokus von TaskStudy liegt auf der Organisation des Studienalltags. Die Anwendung soll Studierenden dabei helfen, Module, Lernziele, To-Dos und Termine an einem zentralen Ort zu verwalten und den Überblick über ihren Lernfortschritt zu behalten.
 
-Durch diese Entscheidung konnte die Anwendung übersichtlich gehalten und die vorhandenen Funktionen benutzerfreundlich umgesetzt werden.
+Funktionen wie ein Dateiupload oder ein Fokus-Timer hätten den Umfang der Anwendung vergrössert und den Schwerpunkt teilweise in Richtung Lernunterstützung verschoben. Da diese Funktionen nicht direkt zur Kernidee der App beitragen, habe ich bewusst darauf verzichtet.
+
+Dadurch konnte ich mich auf die wichtigsten Funktionen konzentrieren und die Anwendung übersichtlich sowie einfach bedienbar gestalten.
 
 ### 3.5 Validate
 - **Bilder der getesteten Version**
@@ -214,37 +253,30 @@ Der Test wurde moderiert durchgeführt. Die Testpersonen bearbeiteten vorgegeben
 - **Stichprobe:** 
 Getestet wurde mit Mitstudierenden, die potenzielle Nutzerinnen und Nutzer der Anwendung darstellen. Insgesamt nahmen 2 Personen teil; Iljazi Marigona und Pejakovic Kristina.
 - **Aufgaben/Szenarien:** 
-Szenario 1 – Neues Modul organisieren
 
-Du beginnst ein neues Semester und möchtest deine Vorlesungen übersichtlich organisieren. Dafür möchtest du ein neues Modul hinzufügen und die wichtigsten Lernziele festhalten, damit du während des Semesters den Überblick behältst.
+  **Szenario 1 – Neues Modul organisieren**
+  Du beginnst ein neues Semester und möchtest deine Vorlesungen übersichtlich organisieren. Dafür möchtest du ein neues Modul hinzufügen und die wichtigsten Lernziele festhalten, damit du während des Semesters den Überblick behältst.
+  **Aufgabe:**
+  Ein neues Modul mit passenden Lernzielen erfassen.
 
-Aufgabe:
-Ein neues Modul mit passenden Lernzielen erfassen.
+  **Szenario 2 – Lernfortschritt aktualisieren**
+  Du hast ein wichtiges Lernziel für das Modul „Prototyping“ vollständig bearbeitet und möchtest deinen Fortschritt aktualisieren, damit du sehen kannst, welche Lernziele bereits erreicht wurden.
+  **Aufgabe:**
+  Ein bestehendes Lernziel als erfüllt markieren.
 
-Szenario 2 – Lernfortschritt aktualisieren
-
-Du hast ein wichtiges Lernziel für das Modul „Prototyping“ vollständig bearbeitet und möchtest deinen Fortschritt aktualisieren, damit du sehen kannst, welche Lernziele bereits erreicht wurden.
-
-Aufgabe:
-Ein bestehendes Lernziel als erfüllt markieren.
-
-Szenario 3 – Prüfungsvorbereitung planen
-
-Du hast erfahren, wann deine nächste Prüfung stattfindet. Damit du rechtzeitig mit dem Lernen beginnen kannst, möchtest du den Prüfungstermin im entsprechenden Modul festhalten.
-
-Aufgabe:
-Einen neuen Prüfungstermin für das Modul „Prototyping“ erfassen.
+  **Szenario 3 – Prüfungsvorbereitung planen**
+  Du hast erfahren, wann deine nächste Prüfung stattfindet. Damit du rechtzeitig mit dem Lernen beginnen kannst, möchtest du den Prüfungstermin im entsprechenden Modul festhalten.
+  **Aufgabe:**
+  Einen neuen Prüfungstermin für das Modul „Prototyping“ erfassen.
 - **Kennzahlen & Beobachtungen:** 
-Positiv:
 
-Das Erstellen eines neuen Moduls wurde von den Testpersonen schnell verstanden und erfolgreich durchgeführt.
-Die Grundstruktur der Anwendung wurde als übersichtlich wahrgenommen.
+  **Positiv:**
+  Das Erstellen eines neuen Moduls wurde von den Testpersonen schnell verstanden und erfolgreich durchgeführt.
+  Die Grundstruktur der Anwendung wurde als übersichtlich wahrgenommen.
 
-
-Beobachtete Probleme:
-
-Die Möglichkeit, Lernziele bereits auf der Seite zur Modulerstellung hinzuzufügen, wurde von beiden Testpersonen nicht erkannt.
-Nach dem Speichern einer Aktion fehlte eine Rückmeldung (z. B. Erfolgsmeldung oder Weiterleitung), wodurch Unsicherheit entstand, ob die Aktion erfolgreich ausgeführt wurde.
+  **Beobachtete Probleme:**
+  Die Möglichkeit, Lernziele bereits auf der Seite zur Modulerstellung hinzuzufügen, wurde von beiden Testpersonen nicht erkannt.
+  Nach dem Speichern einer Aktion fehlte eine Rückmeldung (z. B. Erfolgsmeldung oder Weiterleitung), wodurch Unsicherheit entstand, ob die Aktion erfolgreich ausgeführt wurde.
 
 - **Zusammenfassung der Resultate:**
 Die zentralen Funktionen konnten grundsätzlich erfolgreich genutzt werden. Besonders das Erstellen neuer Module funktionierte intuitiv und ohne grössere Schwierigkeiten. Verbesserungspotenzial zeigte sich vor allem bei der Sichtbarkeit von Funktionen zum Hinzufügen von Lernzielen sowie beim Nutzerfeedback nach erfolgreichen Aktionen. Zudem wurden zusätzliche Funktionen gewünscht, welche die Organisation der Module weiter verbessern würden.
@@ -253,7 +285,6 @@ Die zentralen Funktionen konnten grundsätzlich erfolgreich genutzt werden. Beso
 
 | Priorität | Verbesserung | Begründung |
 |-----------|-------------|------------|
-| Hoch | Sichtbarkeit der Funktion **„Lernziel hinzufügen“** verbessern | Beide Testpersonen fanden die Funktion nicht sofort und hatten Schwierigkeiten, Lernziele zu erfassen. |
 | Hoch | Erfolgsfeedback nach dem Speichern anzeigen | User sollen direkt erkennen können, dass ihre Aktion erfolgreich ausgeführt wurde. |
 | Hoch | Filteroption integrieren | Bei einer grösseren Anzahl von Aufgaben und Terminen kann die Übersicht schnell verloren gehen. Eine Filterfunktion erleichtert das Auffinden relevanter Termine und verbessert die Benutzerfreundlichkeit. |
 | Mittel | Navigation nach Aktionen optimieren | Die Rückkehr zur vorherigen Ansicht war nicht immer klar ersichtlich und führte zu Unsicherheit. |

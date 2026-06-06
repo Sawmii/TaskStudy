@@ -1,4 +1,6 @@
 <script>
+    import "../../routes/styles.css"
+    
     let { name, items = $bindable([]) } = $props();
 
     function addItem() {
@@ -28,7 +30,7 @@
             />
             <button
                 type="button"
-                class="btn remove-btn d-flex align-items-center justify-content-center"
+                class="remove-btn d-flex align-items-center justify-content-center"
                 onclick={() => removeItem(i)}
             >
                 <span class="remove-icon">&times;</span>
@@ -38,16 +40,6 @@
 </div>
 
 <style>
-    .btn-learninggoals {
-        background-color: #8fbfc2;
-        color: white;
-    }
-
-    .btn-learninggoals:hover {
-        background-color: #7ab1b4;
-        color: white;
-    }
-
     .remove-btn {
         width: 38px;
         height: 38px;
