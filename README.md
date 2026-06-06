@@ -332,7 +332,7 @@ Dokumentiert Erweiterungen über den Mindestumfang hinaus.
   - **Datenbank:** Keine Änderungen notwendig.
 - **Aus Evaluation abgeleitet?:** Ja. Während der Evaluation wurde angemerkt, dass eine Rückmeldung nach dem Speichern fehlt.
 
-## 5. Projektorganisation [Optional] 
+## 5. Projektorganisation
 - **Issue-Management:** Es wurde kein formales Issue-Management verwendet. Offene Aufgaben, Ideen und Verbesserungen wurden während der Entwicklung laufend festgehalten und direkt umgesetzt.  
 - **Commit-Praxis:** Änderungen wurden regelmässig in Git gespeichert. Die Commits wurden möglichst mit aussagekräftigen Nachrichten versehen, damit nachvollziehbar bleibt, welche Funktionen ergänzt oder angepasst wurden.
 
@@ -397,3 +397,9 @@ Ein Risiko während der Entwicklung war, dass ich Variablen oder Datenbankfelder
 Zur Qualitätssicherung habe ich jede Änderung direkt nach der Umsetzung getestet. Dadurch konnten Fehler meistens früh erkannt und behoben werden, bevor sie weitere Teile der Anwendung beeinflussten. Besonders bei Formularen, Datenbankabfragen und neuen Funktionen habe ich nach jeder Anpassung überprüft, ob die Anwendung weiterhin wie erwartet funktioniert. Zusätzlich wurde die Anwendung von mehreren Personen getestet. Das erhaltene Feedback half dabei, Fehler zu entdecken und die Benutzerfreundlichkeit weiter zu verbessern. Mehrere Erweiterungen, wie die Filterfunktion oder die Möglichkeit, Module zu löschen, entstanden direkt aus diesen Rückmeldungen.
 
 Insgesamt habe ich während dieses Projekts sehr viel Neues gelernt, insbesondere im Umgang mit SvelteKit, Komponenten, Formularen und der Anbindung einer Datenbank. Auch wenn es zwischendurch frustrierende Momente gab, bin ich mit dem Ergebnis zufrieden und konnte viele praktische Erfahrungen sammeln, die mir bei zukünftigen Projekten sicher weiterhelfen werden.
+
+## 7. Anhang
+Beispiele:
+- **Quellen:** 
+  - Logo erstellt mit ChatGPT Plus auf Basis eigener Vorgaben zu Farben und Gestaltung.
+  - Bootstrap-Dokumentation Navigationsleiste: https://getbootstrap.com/docs/4.0/components/navbar/
