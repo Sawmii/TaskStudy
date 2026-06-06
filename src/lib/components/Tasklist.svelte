@@ -107,49 +107,73 @@
         </div>
     {/if}
 
-    {#each Object.entries(groupedTasks) as [date, tasksForDate]}
-        <div class="mb-4">
-            {#if showDate}
-                <h4 class="mb-2 fw-light">
-                    {new Date(date).toLocaleDateString("de-CH")}
-                </h4>
+    {#if Object.keys(groupedTasks).length === 0}
+        <p class="text-muted">
+            {#if typ === "To-Do"}
+                Keine To-Dos vorhanden.
+            {:else if typ === "Termin"}
+                Keine Termine vorhanden.
+            {:else if typ === "Prüfungstermin"}
+                Keine Prüfungstermine vorhanden.
             {/if}
+        </p>
+    {:else}
+        {#each Object.entries(groupedTasks) as [date, tasksForDate]}
+            <div class="mb-4">
+                {#if showDate}
+                    <h4 class="mb-2 fw-light">
+                        {new Date(date).toLocaleDateString("de-CH")}
+                    </h4>
+                {/if}
 
-            {#each tasksForDate as task}
-                <div class="d-flex align-items-center mb-2 task-item ps-3">
-                    {#if showCheckboxes}
-                        <form method="POST" action="?/toggleTask" use:enhance>
+                {#each tasksForDate as task}
+                    <div class="d-flex align-items-center mb-2 task-item ps-3">
+                        {#if showCheckboxes}
+                            <form method="POST" action="?/toggleTask" use:enhance>
+                                <input
+                                    type="hidden"
+                                    name="id"
+                                    value={task._id}
+                                />
+                                <input
+                                    type="hidden"
+                                    name="fertig"
+                                    value={!task.fertig}
+                                />
+
+                                <input
+                                    class="form-check-input me-4"
+                                    type="checkbox"
+                                    checked={task.fertig}
+                                    onchange={(e) =>
+                                        e.target.form.requestSubmit()}
+                                />
+                            </form>
+                        {:else}
+                            <span class="me-3">•</span>
+                        {/if}
+
+                        <span class="fs-5">
+                            {modules.find((m) => m._id === task.modulID)
+                                ?.abkuerzung}: {task.name}
+                        </span>
+
+                        <form
+                            method="POST"
+                            action="?/deleteTask"
+                            use:enhance
+                            class="ms-auto"
+                        >
                             <input type="hidden" name="id" value={task._id} />
-                            <input
-                                type="hidden"
-                                name="fertig"
-                                value={!task.fertig}
-                            />
-
-                            <input
-                                class="form-check-input me-4"
-                                type="checkbox"
-                                checked={task.fertig}
-                                onchange={(e) => e.target.form.requestSubmit()}
-                            />
+                            <button type="submit" class="delete-btn"
+                                >&times;</button
+                            >
                         </form>
-                    {:else}
-                        <span class="me-3">•</span>
-                    {/if}
-
-                    <span class="fs-5">
-                        {modules.find((m) => m._id === task.modulID)
-                            ?.abkuerzung}: {task.name}
-                    </span>
-
-                    <form method="POST" action="?/deleteTask" use:enhance class="ms-auto">
-                        <input type="hidden" name="id" value={task._id} />
-                        <button type="submit" class="delete-btn">&times;</button>
-                    </form>
-                </div>
-            {/each}
-        </div>
-    {/each}
+                    </div>
+                {/each}
+            </div>
+        {/each}
+    {/if}
 </div>
 
 <style>
